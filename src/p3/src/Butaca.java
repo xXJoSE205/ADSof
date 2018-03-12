@@ -1,36 +1,59 @@
+/**
+ * Esta clase contiene la información de una Butaca
+ *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
+ *
+ */
 package p3.src;
 
 public class Butaca {
-    private int fila;
-    private int numero;
-    private boolean ocupada;
+    private int fila; /** Numero de la fila*/
+    private int numero; /** Numero en la fila*/
+    private boolean ocupada = false; /** Estado de la butaca, originalmente false(desocupada)*/
 
-    public Butaca(int fila, int numero, boolean ocupada) {
+    /**
+     * Constructor de Butaca
+     *
+     * @param fila Numero de la fila
+     * @param numero Numero en la fila
+     */
+    public Butaca(int fila, int numero) {
         this.fila = fila;
         this.numero = numero;
-        this.ocupada = ocupada;
     }
 
+    /**
+     * Devuelve el numero de la fila de la Butaca
+     *
+     * @return Entero, numero de fila
+     */
     public int getFila() {
         return fila;
     }
 
-    public void setFila(int fila) {
-        this.fila = fila;
-    }
-
+    /**
+     * Devuelve el numero en la fila de la Butaca
+     *
+     * @return Entero, numero en la fila
+     */
     public int getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
+    /**
+     * Devuelve el estado de la Butaca, si esta ocupada o no
+     *
+     * @return Boolean: true si esta ocupada, false en caso contrario
+     */
     public boolean isOcupada() {
         return ocupada;
     }
 
+    /**
+     * Cambia el estado de la butaca
+     *
+     * @param ocupada, true si se va a ocupar, false en caso contrario
+     */
     public void setOcupada(boolean ocupada) {
         this.ocupada = ocupada;
     }

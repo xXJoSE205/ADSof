@@ -1,57 +1,105 @@
+/**
+ * Esta clase contiene la información de un Cine
+ *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
+ *
+ */
 package p3.src;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cine {
-    private String nombre;
-    private String direccion;
-    private List<Pelicula> peliculas;
-    private List<Sala> salas;
-    private List<EntradaDiaEspectador> entradas;
-    private double recaudacion;
+    private String nombre; /** Nombre del Cine*/
+    private String direccion; /** Direccion del Cine*/
+    private List<Pelicula> peliculas; /** Lista de Peliculas del Cine*/
+    private List<Sala> salas; /** Lista de Salas del Cine*/
+    private List<EntradaDiaEspectador> entradas; /** Lista de Entradas vendidas del Cine*/
+    private double recaudacion = 0; /** Recaudacion total del Cine*/
 
-    /*public Cine(String nombre, String direccion, List<Pelicula> peliculas, List<Sala> salas, List<Entrada> entradas, double recaudacion) {
+    /**
+     * Constructor de Cine, crea nuevas listas de Peliculas, Salas y Entradas
+     *
+     * @param nombre Nombre del Cine
+     * @param direccion Direccion del cine
+     */
+    public Cine(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.peliculas = new ArrayList<Pelicula>();
-        this.salas = new ArrayList<Sesion>();
+        this.salas = new ArrayList<Sala>();
         this.entradas = new ArrayList<EntradaDiaEspectador>();
-        this.recaudacion = recaudacion;
-    }*/
+    }
 
+    /**
+     * Devuelve el nombre del Cine
+     *
+     * @return Cadena con el nombre del Cine
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Devuelve la direccion del Cine
+     *
+     * @return Cadena con la direccion del Cine
+     */
     public String getDireccion() {
         return direccion;
     }
 
+    /**
+     * Devuelve la lista de Peliculas del Cine
+     *
+     * @return List con las Peliculas del Cine
+     */
     public List<Pelicula> getPeliculas() {
         return peliculas;
     }
 
+    /**
+     * Devuelve la lista de Salas del Cine
+     *
+     * @return List con las Salas del Cine
+     */
     public List<Sala> getSalas() {
         return salas;
     }
 
-    public List<Entrada> getEntradas() {
+    /**
+     * Devuelve la lista de Entradas del Cine
+     *
+     * @return List con las Entradas del Cine
+     */
+    public List<EntradaDiaEspectador> getEntradas() {
         return entradas;
     }
 
+    /**
+     * Devuelve la recaudacion total del Cine
+     *
+     * @return Double con la recaudacion total del Cine
+     */
     public double getRecaudacion() {
         return recaudacion;
     }
 
+    /**
+     * Cambia el nombre del Cine
+     * @param nombre Cadena con el nuevo nombre del Cine
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public Pelicula crearPelicula(String titulo, String director, int anno, String sinopsis, Genero genero){
-        Pelicula p = new Pelicula(titulo, director, anno, sinopsis, genero);
-        return p;
-    }
-
+    /**
+     * Anade una Pelicula a una Sala
+     * @param pelicula
+     * @param sesion
+     * @param sala
+     * @return
+     */
     public boolean anadirPeliculaSala(Pelicula pelicula, Sesion sesion, Sala sala){
         sesion.anadirPelicula(pelicula);
         return sala.anadirSesion(sesion);

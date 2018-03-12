@@ -1,5 +1,6 @@
 package p3.src;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sala {
@@ -7,10 +8,10 @@ public class Sala {
     private List<Butaca> butacas;
     private List<Sesion> sesiones;
 
-    public Sala(int identificador, List<Butaca> butacas, List<Sesion> sesiones) {
+    public Sala(int identificador) {
         this.identificador = identificador;
-        this.butacas = butacas;
-        this.sesiones = sesiones;
+        this.butacas = new ArrayList<Butaca>();
+        this.sesiones = new ArrayList<Sesion>();
     }
 
     public int getIdentificador() {
