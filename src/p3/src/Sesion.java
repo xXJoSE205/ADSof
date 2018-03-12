@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 public class Sesion {
     private LocalDateTime fecha;
     private Pelicula pelicula;
+    private Sala sala;
 
     public Sesion(LocalDateTime fecha, Pelicula pelicula) {
         this.fecha = fecha;

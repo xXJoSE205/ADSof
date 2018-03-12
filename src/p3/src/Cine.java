@@ -106,7 +106,22 @@ public class Cine {
     }
 
     public boolean venderEntrada(Sesion sesion){
-        Entrada e;
+        double x;
+        List<Entrada> entradasSesion= new LinkedList<>();
+        for(Entrada entrada : entradas){
+            if(sesion == entrada.getSesion()){
+                entradasSesion.add(entrada);
+            }
+        }
+        for(Entrada entrada : entradasSesion){
+            if(!entrada.getButaca().isOcupada()){
 
+                recaudacion=recaudacion+entrada.getPrecio();
+                System.out.println("Precio"+ entrada.getPrecio() + "Fila" + entrada.getButaca().getFila()+ "numero" +entrada.getButaca().getNumero());
+                entrada.getButaca().setOcupada(true);
+                return true;
+            }
+        }
+        return false;
     }
 }
