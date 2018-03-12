@@ -104,7 +104,6 @@ public class Cine {
     }
 
     public boolean venderEntrada(Sesion sesion){
-        double x;
         List<Entrada> entradasSesion= new ArrayList<>();
         for(Entrada entrada : entradas){
             if(sesion == entrada.getSesion()){
