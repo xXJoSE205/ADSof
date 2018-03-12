@@ -1,5 +1,6 @@
 package p3.src;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -60,7 +61,7 @@ public class Cine {
 
     public boolean venderEntrada(Sesion sesion){
         double x;
-        List<Entrada> entradasSesion= new LinkedList<>();
+        List<Entrada> entradasSesion= new ArrayList<>();
         for(Entrada entrada : entradas){
             if(sesion == entrada.getSesion()){
                 entradasSesion.add(entrada);
