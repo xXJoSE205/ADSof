@@ -8,12 +8,13 @@ package p3.src;
 import java.time.LocalDateTime;
 
 public class Sesion {
-    private LocalDateTime fecha; /**Fecha de la sesion*/
-    private Pelicula pelicula; /**Pelicula de la sesion*/
-    private Sala sala; /**Sala de la sesion*/
+    private LocalDateTime fecha; /** Fecha de la sesion*/
+    private Pelicula pelicula; /** Pelicula de la sesion*/
+    private Sala sala; /** Sala de la sesion*/
 
     /**
      * Constructor de Sesion
+     *
      * @param fecha fecha de la sesion
      * @param pelicula pelicula de la sesion
      */
@@ -24,15 +25,16 @@ public class Sesion {
 
     /**
      * Devuelve la fecha de la sesion
+     *
      * @return LocalDateTime, fecha de la sesion
      */
-
     public LocalDateTime getFecha() {
         return fecha;
     }
 
     /**
      * Añade la fecha a la sesion
+     *
      * @param fecha fecha a añadir
      */
     public void setFecha(LocalDateTime fecha) {
@@ -41,6 +43,7 @@ public class Sesion {
 
     /**
      * Devuelve la pelicula de la sesion
+     *
      * @return Pelicula, pelicula de la sesion
      */
     public Pelicula getPelicula() {
@@ -50,8 +53,9 @@ public class Sesion {
 
     /**
      * Añade una pelicula a la sesion
+     *
      * @param pelicula pelicula que hay que añadir a la sesion
-     * @return boolean: true si se añade la sesion, false en caso contrario
+     * @return boolean: true si se añade la pelicula, false en caso contrario
      */
     public boolean anadirPelicula(Pelicula pelicula) {
         if(this.pelicula == pelicula){

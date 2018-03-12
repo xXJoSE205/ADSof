@@ -86,6 +86,7 @@ public class Cine {
 
     /**
      * Cambia el nombre del Cine
+     *
      * @param nombre Cadena con el nuevo nombre del Cine
      */
     public void setNombre(String nombre) {
@@ -94,6 +95,7 @@ public class Cine {
 
     /**
      * Anade una Pelicula a una Sesion y a una Sala
+     *
      * @param pelicula Pelicula a anadir
      * @param sesion Sesion a la que anadir la Pelicua
      * @param sala Sala a la que anadir la Sesion
@@ -105,6 +107,7 @@ public class Cine {
 
     /**
      * Permite comprar una entrada para cierta sesion
+     *
      * @param sesion sesion de la que se quiere comprar una entrada
      * @return boolean: true si se añade la sesion, false en caso contrario
      */
@@ -117,7 +120,6 @@ public class Cine {
         }
         for(Entrada entrada : entradasSesion){
             if(!entrada.getButaca().isOcupada()){
-
                 recaudacion=recaudacion+entrada.getPrecio();
                 System.out.println("Precio"+ entrada.getPrecio() + "Fila" + entrada.getButaca().getFila()+ "numero" +entrada.getButaca().getNumero());
                 entrada.getButaca().setOcupada(true);

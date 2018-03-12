@@ -5,7 +5,6 @@
  */
 package p3.src;
 
-
 import java.time.DayOfWeek;
 
 public class EntradaDiaEspectador extends Entrada{
@@ -14,6 +13,7 @@ public class EntradaDiaEspectador extends Entrada{
 
     /**
      * Constructor EntradaDiaEspectador
+     *
      * @param sesion Sesion a la que pertenece la entrada
      * @param butaca Butaca a la que pertenece la entrada
      */
@@ -23,6 +23,7 @@ public class EntradaDiaEspectador extends Entrada{
 
     /**
      * Devuelve el precio de la entrada dependiendo de si es el dia del espectador o no
+     *
      * @return precio de la entrada
      */
     @Override

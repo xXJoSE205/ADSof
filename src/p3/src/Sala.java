@@ -11,20 +11,31 @@ import java.util.List;
 public class Sala {
     private int identificador; /** Identificador de la sala*/
     private List<Butaca> butacas; /** Lista de butacas de la sala*/
-    private List<Sesion> sesiones; /**Lista de sesiones de la sala*/
+    private List<Sesion> sesiones; /** Lista de sesiones de la sala*/
+    private static final int MAX_FILA = 10;
+    private static final int MAX_COLUM = 20;
 
     /**
      * Constructor de sala
+     *
      * @param identificador identificador de la sala
      */
     public Sala(int identificador) {
+        int i, j;
         this.identificador = identificador;
-        this.butacas = new ArrayList<Butaca>();
-        this.sesiones = new ArrayList<Sesion>();
+        this.butacas = new ArrayList<>();
+        this.sesiones = new ArrayList<>();
+        for(i=1; i<=MAX_FILA; i++){
+            for(j=1; j<=MAX_COLUM; j++){
+                Butaca b = new Butaca(i, j);
+                butacas.add(b);
+            }
+        }
     }
 
     /**
      * Devuelve el identificador de la sala
+     *
      * @return int, identificador de la sala
      */
     public int getIdentificador() {
@@ -33,6 +44,7 @@ public class Sala {
 
     /**
      * Devuelve la lista de butacas
+     *
      * @return List, lista de butacas de la sala
      */
     public List<Butaca> getButacas() {
@@ -41,6 +53,7 @@ public class Sala {
 
     /**
      * Devuelve la lista de sesiones
+     *
      * @return List, lista de sesiones de la sala
      */
     public List<Sesion> getSesiones() {
@@ -48,7 +61,8 @@ public class Sala {
     }
 
     /**
-     * Añade una sesion a la sala
+     * Anade una sesion a la sala
+     *
      * @param sesion sesion que tiene que añadir a la lista
      * @return boolean: true si se añade la sesion, false en caso contrario
      */
@@ -62,7 +76,8 @@ public class Sala {
     }
 
     /**
-     * Añade una butaca a la sala
+     * Anade una butaca a la sala
+     *
      * @param butaca butaca que tiene que añadir a la lista
      * @return boolean: true si se añade la sesion, false en caso contrario
      */

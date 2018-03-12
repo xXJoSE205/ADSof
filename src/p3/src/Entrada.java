@@ -1,17 +1,18 @@
 /**
- * Esta clase contiene la información de las entradas
+ * Esta clase contiene la información de una Entrada
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega *
  */
 package p3.src;
 
 public abstract class Entrada {
-    private double precio = 9.20; /** precio de la entrada*/
+    private double precio = 9.20; /** Precio de la entrada*/
     private Sesion sesion; /** Sesion de la sala*/
     private Butaca butaca; /**Butaca de la entrada*/
 
     /**
      * Constructor de Entrada
+     *
      * @param sesion sesion a la que pertenece
      * @param butaca la butaca de la entrada
      */
@@ -24,6 +25,7 @@ public abstract class Entrada {
 
     /**
      * Devuelve el precion de entrada
+     *
      * @return int con el precio
      */
 
@@ -33,6 +35,7 @@ public abstract class Entrada {
 
     /**
      * Devuelve la sesion de la entrada
+     *
      * @return Sesision, sesion de la entrada
      */
     public Sesion getSesion() {
@@ -41,6 +44,7 @@ public abstract class Entrada {
 
     /**
      * Devuelve la butaca
+     *
      * @return Butaca, la butaca de la entrada
      */
     public Butaca getButaca() {

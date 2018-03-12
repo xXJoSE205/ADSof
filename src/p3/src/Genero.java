@@ -1,3 +1,8 @@
+/**
+ * Esta clase contiene una enumeracion de los generos cinematograficos
+ *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega *
+ */
 package p3.src;
 
 public enum Genero {
@@ -11,6 +16,6 @@ public enum Genero {
     MUSICAL("Musical"),
     SUSPENSE("Suspense");
 
-    private Genero(String genero) {
+    Genero(String genero) {
     }
 }
