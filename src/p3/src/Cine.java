@@ -103,6 +103,11 @@ public class Cine {
         return sesion.anadirPelicula(pelicula) && sala.anadirSesion(sesion);
     }
 
+    /**
+     * Permite comprar una entrada para cierta sesion
+     * @param sesion sesion de la que se quiere comprar una entrada
+     * @return boolean: true si se añade la sesion, false en caso contrario
+     */
     public boolean venderEntrada(Sesion sesion){
         List<Entrada> entradasSesion= new ArrayList<>();
         for(Entrada entrada : entradas){
