@@ -105,6 +105,7 @@ public class Cine {
         return sesion.anadirPelicula(pelicula) && sala.anadirSesion(sesion);
     }
 
+
     /**
      * Permite comprar una entrada para cierta sesion
      *
@@ -112,20 +113,31 @@ public class Cine {
      * @return boolean: true si se añade la sesion, false en caso contrario
      */
     public boolean venderEntrada(Sesion sesion){
-        List<Entrada> entradasSesion= new ArrayList<>();
-        for(Entrada entrada : entradas){
-            if(sesion == entrada.getSesion()){
-                entradasSesion.add(entrada);
-            }
-        }
-        for(Entrada entrada : entradasSesion){
-            if(!entrada.getButaca().isOcupada()){
-                recaudacion=recaudacion+entrada.getPrecio();
-                System.out.println("Precio"+ entrada.getPrecio() + "Fila" + entrada.getButaca().getFila()+ "numero" +entrada.getButaca().getNumero());
-                entrada.getButaca().setOcupada(true);
+        EntradaDiaEspectador e;
+
+        for(Butaca butaca : sesion.getButacas()){
+            if(!butaca.isOcupada()){
+                e=new EntradaDiaEspectador(sesion,butaca);
+                recaudacion=recaudacion+e.getPrecio();
+                butaca.setOcupada(true);
+                entradas.add(e);
+                System.out.println("Precio: "+ e.getPrecio()+"Sala: "+ e.getSesion().getSala()+" Fila: "+e.getButaca().getFila()+ "Numero: "+ e.getButaca().getNumero());
                 return true;
             }
         }
         return false;
+    }
+
+    public boolean removePelicula(Pelicula pelicula){
+        int x;
+        for(Pelicula pelicula1 : peliculas){
+            if( pelicula1 == pelicula){
+                for(Sala sala : salas){
+                    for(Sesion sesion : sala.getSesiones()){
+
+                    }
+                }
+            }
+        }
     }
 }
