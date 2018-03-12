@@ -1,8 +1,7 @@
 /**
  * Esta clase contiene la información de una Butaca
  *
- * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
- *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega *
  */
 package p3.src;
 

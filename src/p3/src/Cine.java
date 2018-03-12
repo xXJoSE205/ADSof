@@ -1,8 +1,7 @@
 /**
  * Esta clase contiene la información de un Cine
  *
- * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
- *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega *
  */
 package p3.src;
 
@@ -26,9 +25,9 @@ public class Cine {
     public Cine(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.peliculas = new ArrayList<Pelicula>();
-        this.salas = new ArrayList<Sala>();
-        this.entradas = new ArrayList<EntradaDiaEspectador>();
+        this.peliculas = new ArrayList<>();
+        this.salas = new ArrayList<>();
+        this.entradas = new ArrayList<>();
     }
 
     /**
@@ -94,15 +93,14 @@ public class Cine {
     }
 
     /**
-     * Anade una Pelicula a una Sala
-     * @param pelicula
-     * @param sesion
-     * @param sala
-     * @return
+     * Anade una Pelicula a una Sesion y a una Sala
+     * @param pelicula Pelicula a anadir
+     * @param sesion Sesion a la que anadir la Pelicua
+     * @param sala Sala a la que anadir la Sesion
+     * @return Boolean: true, si se anaden correctamente la Pelicula y la Sala, false en caso contrario
      */
     public boolean anadirPeliculaSala(Pelicula pelicula, Sesion sesion, Sala sala){
-        sesion.anadirPelicula(pelicula);
-        return sala.anadirSesion(sesion);
+        return sesion.anadirPelicula(pelicula) && sala.anadirSesion(sesion);
     }
 
     public boolean venderEntrada(Sesion sesion){
