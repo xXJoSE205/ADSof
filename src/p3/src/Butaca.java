@@ -17,6 +17,9 @@ public class Butaca {
      * @param numero Numero en la fila
      */
     public Butaca(int fila, int numero) {
+        if(fila<1 || numero<1){
+            throw new IllegalArgumentException("Fila o Numero menor que 1: "+fila+", "+numero);
+        }
         this.fila = fila;
         this.numero = numero;
     }
