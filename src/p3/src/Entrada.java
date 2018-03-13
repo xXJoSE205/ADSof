@@ -6,7 +6,8 @@
 package p3.src;
 
 public abstract class Entrada {
-    private double precio = 9.20; /** Precio de la entrada*/
+    public static final double PRECIO = 9.20;
+    private double precio = PRECIO; /** Precio de la entrada*/
     private Sesion sesion; /** Sesion de la sala*/
     private Butaca butaca; /**Butaca de la entrada*/
 

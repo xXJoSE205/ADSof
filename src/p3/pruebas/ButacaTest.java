@@ -13,40 +13,40 @@ public class ButacaTest {
         b1 = new Butaca(2, 5);
     }
 
-    @Test
-    public void getFila1() {
-        System.out.println("Butaca: Prueba geFila1");
-        assertTrue(b1.getFila() == 2);
-    }
-
     @Test(expected = IllegalArgumentException.class)
-    public void getFila2() {
-        System.out.println("Butaca: Prueba getFila2");
+    public void constructor1() {
+        System.out.println("Butaca: Prueba constructor1");
         Butaca b2 = new Butaca(-4, 5);
     }
 
-    @Test
-    public void getNumero1() {
-        System.out.println("Butaca: Prueba geNumero1");
-        assertTrue(b1.getNumero() == 5);
-    }
-
     @Test(expected = IllegalArgumentException.class)
-    public void getNumero2() {
-        System.out.println("Butaca: Prueba geNumero2");
+    public void constructor2() {
+        System.out.println("Butaca: Prueba constructor2");
         Butaca b2 = new Butaca(2, 0);
     }
 
-    @Test
-    public void isOcupada1() {
-        System.out.println("Butaca: Prueba isOcupada1");
-        assertFalse(b1.isOcupada());
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor3() {
+        System.out.println("Butaca: Prueba constructor3");
+        Butaca b2 = new Butaca(-6, -3);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void isOcupada2() {
-        System.out.println("Butaca: Prueba isOcupada2");
-        Butaca b2 = new Butaca(-6, -3);
+    @Test
+    public void getFila() {
+        System.out.println("Butaca: Prueba geFila");
+        assertTrue(b1.getFila() == 2);
+    }
+
+    @Test
+    public void getNumero() {
+        System.out.println("Butaca: Prueba geNumero");
+        assertTrue(b1.getNumero() == 5);
+    }
+
+    @Test
+    public void isOcupada() {
+        System.out.println("Butaca: Prueba isOcupada1");
+        assertFalse(b1.isOcupada());
     }
 
     @Test
