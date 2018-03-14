@@ -12,7 +12,6 @@ public class Sala {
     private int identificador; /** Identificador de la sala*/
     private List<Sesion> sesiones; /** Lista de sesiones de la sala*/
 
-
     /**
      * Constructor de sala
      *

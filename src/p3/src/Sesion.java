@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sesion {
+    private static final int MAX_FILA = 10; /** Maximo de filas en la sala*/
+    private static final int MAX_COLUM = 20; /** Maximo de asientos por fila*/
     private LocalDateTime fecha; /** Fecha de la sesion*/
     private Pelicula pelicula; /** Pelicula de la sesion*/
     private Sala sala; /** Sala de la sesion*/
     private List<Butaca> butacas; /** Lista de butacas de la sala*/
-    private static final int MAX_FILA = 10;
-    private static final int MAX_COLUM = 20;
+    private int ButacasDisponibles = MAX_FILA*MAX_COLUM; /** Numero de butacas disponibles*/
 
     /**
      * Constructor de Sesion
@@ -71,13 +72,13 @@ public class Sesion {
      * @param pelicula pelicula que hay que añadir a la sesion
      * @return boolean: true si se añade la pelicula, false en caso contrario
      */
-    public boolean anadirPelicula(Pelicula pelicula) {
+    /*public boolean anadirPelicula(Pelicula pelicula) {
         if(this.pelicula == pelicula){
             return false;
         }
         this.pelicula=pelicula;
         return true;
-    }
+    }*/
 
     /**
      * Devuelve la sala de sesion
@@ -96,20 +97,14 @@ public class Sesion {
         return butacas;
     }
 
-    /**
-     * Anade una butaca a la sala
-     *
-     * @param butaca butaca que tiene que añadir a la lista
-     * @return boolean: true si se añade la sesion, false en caso contrario
-     */
-    public boolean anadirButaca(Butaca butaca) {
-        for(Butaca x: butacas){
-            if(x.getFila()== butaca.getFila()){
-                if(x.getNumero()== butaca.getNumero()) {
-                    return false;
-                }
-            }
+    public int getButacasDisponibles() {
+        return ButacasDisponibles;
+    }
+
+    public void disminuirButacasDisponibles() {
+        if(this.ButacasDisponibles<0){
+            throw new IllegalArgumentException("Numero de butacas disponibles menor que 0: "+ButacasDisponibles);
         }
-        return this.butacas.add(butaca);
+        ButacasDisponibles -= 1;
     }
 }
