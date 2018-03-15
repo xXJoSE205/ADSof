@@ -119,7 +119,7 @@ public class Sesion {
     /**
      * Disminuye el numero de butacas disponibles
      *
-     * @throws {InvalidArgumentException}
+     * @throws Error si el numero de butacas disponibles es menor que 1
      */
     public void disminuirButacasDisponibles() throws IllegalAccessException {
         if(this.ButacasDisponibles<1){

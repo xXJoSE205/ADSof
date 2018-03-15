@@ -4,6 +4,7 @@ import p3.src.Pelicula;
 import p3.src.Genero;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class PeliculaTest {

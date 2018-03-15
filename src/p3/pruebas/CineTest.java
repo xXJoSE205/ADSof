@@ -3,7 +3,6 @@ package p3.pruebas;
 import org.junit.Before;
 import org.junit.Test;
 import p3.src.*;
-
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.*;
@@ -14,6 +13,24 @@ public class CineTest {
     @Before
     public void setUp() throws Exception {
         cine = new Cine("J & M","Calle bronce numero 5");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor1(){
+        System.out.println("Cine: Prueba constructor1");
+        Cine cine2 = new Cine(null, "Calle Bronce, N 5");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor2(){
+        System.out.println("Cine: Prueba constructor2");
+        Cine cine2 = new Cine("J & M", null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor3(){
+        System.out.println("Cine: Prueba constructor3");
+        Cine cine2 = new Cine(null, null);
     }
 
     @Test
@@ -71,10 +88,15 @@ public class CineTest {
     }
 
     @Test
-    public void setNombre() {
-        System.out.println("Cine: Prueba setNombre");
-        cine.setNombre("Zero Two");
-        assertTrue(cine.getNombre()=="Zero Two");
+    public void setNombre1() {
+        System.out.println("Cine: Prueba setNombre1");
+        assertTrue(cine.setNombre("Zero Two"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setNombre2() {
+        System.out.println("Cine: Prueba setNombre2");
+        cine.setNombre(null);
     }
 
     @Test

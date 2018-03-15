@@ -16,7 +16,7 @@ public abstract class Entrada {
      *
      * @param sesion sesion a la que pertenece
      * @param butaca la butaca de la entrada
-     * @throws {InvalidArgumentException}
+     * @throws Error si algun argumento es nulo
      */
     public Entrada(Sesion sesion, Butaca butaca) {
         if(sesion == null || butaca == null){

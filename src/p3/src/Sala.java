@@ -16,7 +16,7 @@ public class Sala {
      * Constructor de sala
      *
      * @param identificador identificador de la sala
-     * @throws {InvalidArgumentException}
+     * @throws Error si el identificador es menor que 1
      */
     public Sala(int identificador) {
         if(identificador<1){
@@ -51,7 +51,7 @@ public class Sala {
      *
      * @param sesion sesion que se quiere que añadir a la lista
      * @return boolean: true si se añade la sesion, false en caso contrario
-     * @throws {InvalidArgumentException}
+     * @throws Error si la sesion es nula
      */
     public boolean anadirSesion(Sesion sesion) {
         Pelicula peli;

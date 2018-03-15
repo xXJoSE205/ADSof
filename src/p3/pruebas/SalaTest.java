@@ -3,7 +3,6 @@ package p3.pruebas;
 import org.junit.Before;
 import org.junit.Test;
 import p3.src.*;
-
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.*;

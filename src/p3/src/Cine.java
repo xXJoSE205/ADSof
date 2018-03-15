@@ -5,7 +5,6 @@
  */
 package p3.src;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +21,12 @@ public class Cine {
      *
      * @param nombre Nombre del Cine
      * @param direccion Direccion del cine
+     * @throws Error si algun argumento es nulo
      */
     public Cine(String nombre, String direccion) {
+        if(nombre == null || direccion == null){
+            throw new IllegalArgumentException("Nombre o direccion nula");
+        }
         this.nombre = nombre;
         this.direccion = direccion;
         this.peliculas = new ArrayList<>();
@@ -89,9 +92,15 @@ public class Cine {
      * Cambia el nombre del Cine
      *
      * @param nombre Cadena con el nuevo nombre del Cine
+     * @return boolean, true si se modifica el nombre correctamente
+     * @throws Error si el nombre es nulo
      */
-    public void setNombre(String nombre) {
+    public boolean setNombre(String nombre) {
+        if(nombre == null){
+            throw new IllegalArgumentException("Nombre nulo");
+        }
         this.nombre = nombre;
+        return true;
     }
 
     /**
@@ -113,10 +122,11 @@ public class Cine {
      * @return boolean: true si se vende la entrada, false en caso contrario
      */
     public boolean venderEntrada(Sesion sesion) throws IllegalAccessException {
+        EntradaDiaEspectador e;
+
         if(sesion==null){
             return false;
         }
-        EntradaDiaEspectador e;
 
         if(sesion.getButacasDisponibles()>0) {
             for (Butaca butaca : sesion.getButacas()) {
@@ -139,28 +149,31 @@ public class Cine {
      *
      * @param pelicula pelicula que se quiere eliminar
      * @return int, numero de sesiones eliminadas si se ha borrado la pelicula, 0 si no existe esa pelicula
-     * @throws {InvalidArgumentException}
+     * @throws Error si la pelicula es nulo
      */
     public int removePelicula(Pelicula pelicula){
+        int x=0;
+
         if(pelicula==null){
             throw new IllegalArgumentException("Pelicula nula");
         }
-        int x=0;
+
         for(Pelicula pelicula1 : peliculas){
             if( pelicula1 == pelicula){
                 for(Sala sala : salas){
-                    for(Sesion sesion : sala.getSesiones()){
-                        if(sesion.getPelicula() == pelicula){
-                            x=x+1;
-                            salas.remove(sesion);
+                    if(sala.getSesiones().size()>0){
+                        for (Sesion sesion : sala.getSesiones()){
+                            if (sesion.getPelicula() == pelicula){
+                                x++;
+                                salas.remove(sesion);
+                            }
                         }
                     }
                 }
                 peliculas.remove(pelicula);
             }
-            return x;
         }
-        return 0;
+        return x;
     }
 
     /**
@@ -168,7 +181,7 @@ public class Cine {
      *
      * @param sala sala que se quiere añadir
      * @return boolean: true si se añade la sala
-     * @throws {InvalidArgumentException}
+     * @throws Error si la sala es nula
      */
     public boolean annadirSala(Sala sala){
         if(sala == null){
