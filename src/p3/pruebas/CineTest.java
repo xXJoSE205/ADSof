@@ -48,7 +48,9 @@ public class CineTest {
     @Test
     public void getPeliculas() {
         System.out.println("Cine: Prueba getPeliculas");
-        Pelicula p1= new Pelicula("Dragonball Evolution","James Wong",2009,"Cuenta la epica aventura de un joven que descubre su destino: salvar al mundo de las fuerzas malvadas", Genero.FANTASIA, 90);
+        Pelicula p1= new Pelicula("Dragonball Evolution","James Wong",2009,
+                "Cuenta la epica aventura de un joven que descubre su destino: "
+                + "salvar al mundo de las fuerzas malvadas", Genero.FANTASIA, 90);
         cine.anadirPelicula(p1);
         assertNotNull(cine.getPeliculas());
     }
@@ -65,7 +67,8 @@ public class CineTest {
     public void getEntradas() throws IllegalAccessException {
         System.out.println("Cine: Prueba getEntradas");
         Sala s= new Sala(7);
-        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018, "Una historia de robots controlados por humanos",Genero.ACCION, 90);
+        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018,
+                "Una historia de robots controlados por humanos",Genero.ACCION, 90);
         Sesion sesion= new Sesion(LocalDateTime.of(2018,12,03,15,20),p1);
         cine.annadirSala(s);
         cine.anadirPelicula(p1);
@@ -78,7 +81,8 @@ public class CineTest {
     public void getRecaudacion() throws IllegalAccessException {
         System.out.println("Cine: Prueba getRecaudacion");
         Sala s= new Sala(7);
-        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018, "Una historia de robots controlados por humanos",Genero.ACCION, 90);
+        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018,
+                "Una historia de robots controlados por humanos",Genero.ACCION, 90);
         Sesion sesion= new Sesion(LocalDateTime.of(2018,12,03,15,20),p1);
         cine.annadirSala(s);
         cine.anadirPelicula(p1);
@@ -100,10 +104,11 @@ public class CineTest {
     }
 
     @Test
-    public void venderEntrada() throws IllegalAccessException {
-        System.out.println("Cine: Prueba venderEntrada");
+    public void venderEntrada1() throws IllegalAccessException {
+        System.out.println("Cine: Prueba venderEntrada1");
         Sala s= new Sala(7);
-        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018, "Una historia de robots controlados por humanos",Genero.ACCION, 90);
+        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018,
+                "Una historia de robots controlados por humanos", Genero.ACCION, 90);
         Sesion sesion= new Sesion(LocalDateTime.of(2018,12,03,15,20),p1);
         cine.annadirSala(s);
         cine.anadirPelicula(p1);
@@ -111,15 +116,31 @@ public class CineTest {
         assertTrue(cine.venderEntrada(sesion));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void venderEntrada2() throws IllegalAccessException {
+        System.out.println("Cine: Prueba venderEntrada2");
+        cine.venderEntrada(null);
+    }
+
+    @Test(expected = IllegalAccessException.class)
+    public void venderEntrada3() throws IllegalAccessException {
+        System.out.println("Cine: Prueba venderEntrada3");
+        Pelicula p1 = new Pelicula("Zero Two", "Ichigo",2018,
+                "Una historia de robots controlados por humanos", Genero.ACCION, 90);
+        Sesion ses = new Sesion(LocalDateTime.of(2018, 3, 16, 15, 00), p1);
+        cine.venderEntrada(ses);
+    }
+
     @Test
     public void removePelicula() {
         System.out.println("Cine: Prueba removePelicula");
-        Sala sala= new Sala(7);
-        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018, "Una historia de robots controlados por humanos",Genero.ACCION, 90);
-        Sesion sesion= new Sesion(LocalDateTime.of(2018,12,03,15,20),p1);
+        Sala sala = new Sala(7);
+        Pelicula p1 = new Pelicula("Zero Two", "Ichigo",2018,
+                "Una historia de robots controlados por humanos", Genero.ACCION, 90);
+        Sesion sesion = new Sesion(LocalDateTime.of(2018,12,03,15,20), p1);
         cine.annadirSala(sala);
         cine.anadirPelicula(p1);
         sala.anadirSesion(sesion);
-        assertTrue(cine.removePelicula(p1)==1);
+        assertTrue(cine.removePelicula(p1)>0);
     }
 }

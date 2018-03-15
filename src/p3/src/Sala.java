@@ -51,7 +51,7 @@ public class Sala {
      *
      * @param sesion sesion que se quiere que añadir a la lista
      * @return boolean: true si se añade la sesion, false en caso contrario
-     * @throws Error si la sesion es nula
+     * @throws Error si la sesion es nula o si ya hay una pelicula a la misma hora
      */
     public boolean anadirSesion(Sesion sesion) {
         Pelicula peli;
@@ -69,13 +69,13 @@ public class Sala {
                     sesion.setSala(this);
                     return this.sesiones.add(sesion);
                 }
-                return false;
+                throw new IllegalArgumentException("Ya hay una pelicula a la misma hora");
             }else{
                 if(sesion.getFecha().compareTo(ses.getFecha())>peli.getDuracion()){
                     sesion.setSala(this);
                     return this.sesiones.add(sesion);
                 }
-                return false;
+                throw new IllegalArgumentException("Ya hay una pelicula a la misma hora");
             }
         }
         return false;

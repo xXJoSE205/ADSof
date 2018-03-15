@@ -120,15 +120,20 @@ public class Cine {
      *
      * @param sesion sesion de la que se quiere comprar una entrada
      * @return boolean: true si se vende la entrada, false en caso contrario
+     * @throws Error si la sesion es nula, si la sesion no tiene sala asignada o si las butacas estan ocupadas
      */
     public boolean venderEntrada(Sesion sesion) throws IllegalAccessException {
         EntradaDiaEspectador e;
 
         if(sesion==null){
-            return false;
+            throw new IllegalArgumentException("Sesion nula");
         }
 
-        if(sesion.getButacasDisponibles()>0) {
+        if(sesion.getSala()==null){
+            throw new IllegalAccessException("Sesion sin sala asignada");
+        }
+
+        if (sesion.getButacasDisponibles() > 0) {
             for (Butaca butaca : sesion.getButacas()) {
                 if (!butaca.isOcupada()) {
                     e = new EntradaDiaEspectador(sesion, butaca);
@@ -136,13 +141,13 @@ public class Cine {
                     butaca.setOcupada(true);
                     sesion.disminuirButacasDisponibles();
                     entradas.add(e);
-                    System.out.println("Precio: "+e.getPrecio()+" Sala: "+e.getSesion().getSala()+" Fila: "
-                            +e.getButaca().getFila()+" Numero: "+e.getButaca().getNumero());
+                    System.out.println("Precio: " + e.getPrecio() + " Sala: " + e.getSesion().getSala() + " Fila: "
+                            + e.getButaca().getFila() + " Numero: " + e.getButaca().getNumero());
                     return true;
                 }
             }
         }
-        return false;
+        throw new IllegalAccessException("Butacas de la sesion llenas");
     }
 
     /**
@@ -150,7 +155,7 @@ public class Cine {
      *
      * @param pelicula pelicula que se quiere eliminar
      * @return int, numero de sesiones eliminadas si se ha borrado la pelicula, 0 si no existe esa pelicula
-     * @throws Error si la pelicula es nulo
+     * @throws Error si la pelicula es nula
      */
     public int removePelicula(Pelicula pelicula){
         int x=0;
@@ -159,19 +164,23 @@ public class Cine {
             throw new IllegalArgumentException("Pelicula nula");
         }
 
-        for(Pelicula pelicula1 : peliculas){
-            if( pelicula1 == pelicula){
-                for(Sala sala : salas){
-                    if(sala.getSesiones().size()>0){
-                        for (Sesion sesion : sala.getSesiones()){
-                            if (sesion.getPelicula() == pelicula){
-                                x++;
-                                salas.remove(sesion);
+        if(peliculas.size()>0) {
+            for (Pelicula pelicula1 : peliculas) {
+                if (pelicula1.equals(pelicula)) {
+                    for (Sala sala : salas) {
+                        if (sala.getSesiones().size() > 0) {
+                            for (Sesion ses : sala.getSesiones()) {
+                                if (ses.getPelicula().equals(pelicula)) {
+                                    x++;
+                                    sala.getSesiones().remove(ses);
+                                    break;
+                                }
                             }
                         }
                     }
+                    peliculas.remove(pelicula1);
+                    break;
                 }
-                peliculas.remove(pelicula);
             }
         }
         return x;

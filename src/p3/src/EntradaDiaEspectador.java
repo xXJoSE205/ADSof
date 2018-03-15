@@ -10,7 +10,7 @@ import java.time.DayOfWeek;
 public class EntradaDiaEspectador extends Entrada{
 
     private static final double DESCUENTO = 4; /** Descuento*/
-    private static final DayOfWeek DIA_ESPECTADOR = DayOfWeek.WEDNESDAY; /** Marca el dia de la semana para el dia del espectador*/
+    private static final DayOfWeek DIA_ESPECTADOR = DayOfWeek.WEDNESDAY; /** Dia de la semana para el dia del espectador*/
 
     /**
      * Constructor EntradaDiaEspectador
