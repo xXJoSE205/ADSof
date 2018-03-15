@@ -94,6 +94,7 @@ public class Pelicula {
      * Muestra la informacion de la pelicula por pantalla
      */
     public void mostarInformacion() {
-        System.out.println("Titulo: "+titulo+"\n"+"Director: "+director+"\n"+"Año: "+anno+"\n"+"Sinopsis: "+sinopsis+"\n"+"Genero: "+genero.toString()+"\n"+"Duracion: "+duracion+" min");
+        System.out.println("Titulo: "+titulo+"\n"+"Director: "+director+"\n"+"Año: "+anno+"\n"+"Sinopsis: "+sinopsis+
+                "\n"+"Genero: "+genero.toString()+"\n"+"Duracion: "+duracion+" min");
     }
 }
