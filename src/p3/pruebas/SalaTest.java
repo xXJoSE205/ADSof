@@ -41,7 +41,8 @@ public class SalaTest {
     @Test
     public void anadirSesion1() {
         System.out.println("Sala: Prueba anadirSesion1");
-        sala.anadirSesion(null);
+        sala.anadirSesion(ses);
+        assertNotNull(sala.getSesiones());
     }
 
     @Test(expected = IllegalArgumentException.class)
