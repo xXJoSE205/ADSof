@@ -128,16 +128,27 @@ public class Cine {
         return false;
     }
 
+    /**
+     *
+     * @param pelicula pelicula que se quiere eliminar
+     * @return boolean true si se ha borrado la pelicula, false en caso de error o que la pelicula no se encuentre
+     */
     public boolean removePelicula(Pelicula pelicula){
-        int x;
+        int x=0;
         for(Pelicula pelicula1 : peliculas){
             if( pelicula1 == pelicula){
                 for(Sala sala : salas){
                     for(Sesion sesion : sala.getSesiones()){
-
+                        if(sesion.getPelicula() == pelicula){
+                            x=x+1;
+                            salas.remove(sesion);
+                        }
                     }
                 }
+                peliculas.remove(pelicula);
             }
+            return true;
         }
+        return false;
     }
 }
