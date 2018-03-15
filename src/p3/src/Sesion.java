@@ -16,7 +16,7 @@ public class Sesion {
     private Pelicula pelicula; /** Pelicula de la sesion*/
     private Sala sala; /** Sala de la sesion*/
     private List<Butaca> butacas; /** Lista de butacas de la sala*/
-    private int ButacasDisponibles = MAX_FILA*MAX_COLUM; /** Numero de butacas disponibles*/
+    private int butacasDisponibles = MAX_FILA*MAX_COLUM; /** Numero de butacas disponibles*/
 
     /**
      * Constructor de Sesion
@@ -113,7 +113,7 @@ public class Sesion {
      * @return Entero, numero de butacas disponibles
      */
     public int getButacasDisponibles() {
-        return ButacasDisponibles;
+        return butacasDisponibles;
     }
 
     /**
@@ -122,9 +122,9 @@ public class Sesion {
      * @throws Error si el numero de butacas disponibles es menor que 1
      */
     public void disminuirButacasDisponibles() throws IllegalAccessException {
-        if(this.ButacasDisponibles<1){
-            throw new IllegalArgumentException("Numero de butacas disponibles menor que 1: "+ButacasDisponibles);
+        if(this.butacasDisponibles<1){
+            throw new IllegalArgumentException("Numero de butacas disponibles menor que 1: "+butacasDisponibles);
         }
-        ButacasDisponibles -= 1;
+        butacasDisponibles -= 1;
     }
 }

@@ -136,7 +136,8 @@ public class Cine {
                     butaca.setOcupada(true);
                     sesion.disminuirButacasDisponibles();
                     entradas.add(e);
-                    System.out.println("Precio: " + e.getPrecio() + " Sala: " + e.getSesion().getSala() + " Fila: " + e.getButaca().getFila() + " Numero: " + e.getButaca().getNumero());
+                    System.out.println("Precio: "+e.getPrecio()+" Sala: "+e.getSesion().getSala()+" Fila: "
+                            +e.getButaca().getFila()+" Numero: "+e.getButaca().getNumero());
                     return true;
                 }
             }
