@@ -126,7 +126,7 @@ public class Cine {
                     butaca.setOcupada(true);
                     sesion.disminuirButacasDisponibles();
                     entradas.add(e);
-                    System.out.println("Precio: " + e.getPrecio() + "Sala: " + e.getSesion().getSala() + " Fila: " + e.getButaca().getFila() + "Numero: " + e.getButaca().getNumero());
+                    System.out.println("Precio: " + e.getPrecio() + " Sala: " + e.getSesion().getSala() + " Fila: " + e.getButaca().getFila() + " Numero: " + e.getButaca().getNumero());
                     return true;
                 }
             }
@@ -175,6 +175,19 @@ public class Cine {
             throw new IllegalArgumentException("Sala nula");
         }
         salas.add(sala);
+        return true;
+    }
+
+    /**
+     *
+     * @param pelicula pelicula que se quiere añadir
+     * @return boolean: true si se añade la pelicula, false en caso contrario
+     */
+    public boolean anadirPelicula(Pelicula pelicula){
+        if(pelicula==null){
+            return false;
+        }
+        peliculas.add(pelicula);
         return true;
     }
 
