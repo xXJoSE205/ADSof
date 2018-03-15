@@ -15,6 +15,7 @@ public class Butaca {
      *
      * @param fila Numero de la fila
      * @param numero Numero en la fila
+     * @throws Error si alguno de los argumentos es menor que 1
      */
     public Butaca(int fila, int numero) {
         if(fila<1 || numero<1){

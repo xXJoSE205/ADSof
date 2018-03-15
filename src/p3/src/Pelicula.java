@@ -22,7 +22,7 @@ public class Pelicula {
      * @param sinopsis Sinopsis(trama)
      * @param genero Genero cinematografico
      * @param duracion Duracion en minutos de la pelicula
-     * @throws {InvalidArgumentException}
+     * @throws Error si el anno es menor que 1900 o si la duracion es menor que 1
      */
     public Pelicula(String titulo, String director, int anno, String sinopsis, Genero genero, int duracion) {
         if(anno<1900 || duracion<1){

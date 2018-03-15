@@ -23,7 +23,7 @@ public class Sesion {
      *
      * @param fecha fecha de la sesion
      * @param pelicula pelicula de la sesion
-     * @throws {InvalidArgumentException}
+     * @throws Error si algun argumento es nulo
      */
     public Sesion(LocalDateTime fecha, Pelicula pelicula) {
         int i, j;
