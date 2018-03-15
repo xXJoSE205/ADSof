@@ -119,12 +119,14 @@ public class Sesion {
     /**
      * Disminuye el numero de butacas disponibles
      *
+     * @return boolean, true si se ha disminuido el numor correctamente
      * @throws Error si el numero de butacas disponibles es menor que 1
      */
-    public void disminuirButacasDisponibles() throws IllegalAccessException {
+    public boolean disminuirButacasDisponibles() throws IllegalAccessException {
         if(this.butacasDisponibles<1){
             throw new IllegalArgumentException("Numero de butacas disponibles menor que 1: "+butacasDisponibles);
         }
         butacasDisponibles -= 1;
+        return true;
     }
 }

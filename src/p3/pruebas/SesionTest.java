@@ -101,13 +101,7 @@ public class SesionTest {
 
     @Test
     public void disminuirButacasDisponibles() throws IllegalAccessException{
-        int i, j;
         System.out.println("Sesion: Prueba disminuirButacasDisponibles");
-        for(i=1; i<=Sesion.MAX_FILA; i++){
-            for(j=1; j<=Sesion.MAX_COLUM; j++){
-                ses1.disminuirButacasDisponibles();
-            }
-        }
-        assertTrue(ses1.getButacasDisponibles() == 0);
+        assertTrue(ses1.disminuirButacasDisponibles());
     }
 }
