@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sesion {
-    private static final int MAX_FILA = 10; /** Maximo de filas en la sala*/
-    private static final int MAX_COLUM = 20; /** Maximo de asientos por fila*/
+    public static final int MAX_FILA = 10; /** Maximo de filas en la sala*/
+    public static final int MAX_COLUM = 20; /** Maximo de asientos por fila*/
     private LocalDateTime fecha; /** Fecha de la sesion*/
     private Pelicula pelicula; /** Pelicula de la sesion*/
     private Sala sala; /** Sala de la sesion*/
@@ -122,7 +122,7 @@ public class Sesion {
      * @throws {InvalidArgumentException}
      */
     public void disminuirButacasDisponibles() throws IllegalAccessException {
-        if(this.ButacasDisponibles<=1){
+        if(this.ButacasDisponibles<1){
             throw new IllegalArgumentException("Numero de butacas disponibles menor que 1: "+ButacasDisponibles);
         }
         ButacasDisponibles -= 1;

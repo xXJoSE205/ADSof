@@ -62,11 +62,13 @@ public class Sala {
             peli = sesion.getPelicula();
             if(sesion.getFecha().compareTo(ses.getFecha())<0){
                 if(ses.getFecha().compareTo(sesion.getFecha())>peli.getDuracion()){
+                    sesion.setSala(this);
                     return this.sesiones.add(sesion);
                 }
                 return false;
             }else{
                 if(sesion.getFecha().compareTo(ses.getFecha())>peli.getDuracion()){
+                    sesion.setSala(this);
                     return this.sesiones.add(sesion);
                 }
                 return false;
