@@ -1,8 +1,7 @@
-
 /**
  * Esta clase contiene la información de un Cine
  *
- * @author Jorge Mateo Segura y José Antonio Muñoz Ortega *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
 package p3.src;
 
@@ -98,14 +97,12 @@ public class Cine {
     /**
      * Añade una Pelicula a una Sesion y a una Sala
      *
-     * @param pelicula Pelicula a añadir
      * @param sesion Sesion a la que añadir la Pelicua
      * @param sala Sala a la que añadir la Sesion
      * @return Boolean: true, si se añaden correctamente la Pelicula y la Sala, false en caso contrario
      */
-    public boolean anadirPeliculaSala(Pelicula pelicula, Sesion sesion, Sala sala, LocalDateTime fecha){
-        Sesion s = new Sesion(fecha, pelicula, sala);
-        return sala.anadirSesion(s);
+    public boolean anadirSalaSesion(Sala sala, Sesion sesion){
+        return sala.anadirSesion(sesion);
     }
 
 
@@ -115,7 +112,7 @@ public class Cine {
      * @param sesion sesion de la que se quiere comprar una entrada
      * @return boolean: true si se vende la entrada, false en caso contrario
      */
-    public boolean venderEntrada(Sesion sesion){
+    public boolean venderEntrada(Sesion sesion) throws IllegalAccessException {
         if(sesion==null){
             return false;
         }
@@ -138,13 +135,15 @@ public class Cine {
     }
 
     /**
+     * Quita una pelicula del cine junto a todas las sesiones en las que este
      *
      * @param pelicula pelicula que se quiere eliminar
-     * @return int: numero de sesiones eliminadas si se ha borrado la pelicula, -1 en caso de error o 0 em caso de que la pelicula no se encuentre
+     * @return int, numero de sesiones eliminadas si se ha borrado la pelicula, 0 si no existe esa pelicula
+     * @throws {InvalidArgumentException}
      */
     public int removePelicula(Pelicula pelicula){
         if(pelicula==null){
-            return -1;
+            throw new IllegalArgumentException("Pelicula nula");
         }
         int x=0;
         for(Pelicula pelicula1 : peliculas){
@@ -165,13 +164,15 @@ public class Cine {
     }
 
     /**
+     * Añade una sala al cine
      *
      * @param sala sala que se quiere añadir
-     * @return boolean: true si se añade la sala, false en caso contrario
+     * @return boolean: true si se añade la sala
+     * @throws {InvalidArgumentException}
      */
     public boolean annadirSala(Sala sala){
-        if(sala==null){
-            return false;
+        if(sala == null){
+            throw new IllegalArgumentException("Sala nula");
         }
         salas.add(sala);
         return true;

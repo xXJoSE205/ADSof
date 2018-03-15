@@ -1,7 +1,7 @@
 /**
  * Esta clase contiene la información de una Pelicula
  *
- * @author Jorge Mateo Segura y José Antonio Muñoz Ortega *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
 package p3.src;
 
@@ -21,6 +21,8 @@ public class Pelicula {
      * @param anno Anno de estreno
      * @param sinopsis Sinopsis(trama)
      * @param genero Genero cinematografico
+     * @param duracion Duracion en minutos de la pelicula
+     * @throws {InvalidArgumentException}
      */
     public Pelicula(String titulo, String director, int anno, String sinopsis, Genero genero, int duracion) {
         if(anno<1900 || duracion<1){

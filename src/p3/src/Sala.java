@@ -16,6 +16,7 @@ public class Sala {
      * Constructor de sala
      *
      * @param identificador identificador de la sala
+     * @throws {InvalidArgumentException}
      */
     public Sala(int identificador) {
         if(identificador<1){
@@ -50,9 +51,13 @@ public class Sala {
      *
      * @param sesion sesion que se quiere que añadir a la lista
      * @return boolean: true si se añade la sesion, false en caso contrario
+     * @throws {InvalidArgumentException}
      */
     public boolean anadirSesion(Sesion sesion) {
         Pelicula peli;
+        if(sesion == null){
+            throw new IllegalArgumentException("Sesion nula");
+        }
         for(Sesion ses: sesiones){
             peli = sesion.getPelicula();
             if(sesion.getFecha().compareTo(ses.getFecha())<0){
@@ -69,6 +74,4 @@ public class Sala {
         }
         return false;
     }
-
-
 }

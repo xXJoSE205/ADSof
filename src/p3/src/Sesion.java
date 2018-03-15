@@ -23,12 +23,16 @@ public class Sesion {
      *
      * @param fecha fecha de la sesion
      * @param pelicula pelicula de la sesion
+     * @throws {InvalidArgumentException}
      */
-    public Sesion(LocalDateTime fecha, Pelicula pelicula, Sala sala) {
+    public Sesion(LocalDateTime fecha, Pelicula pelicula) {
         int i, j;
+        if(fecha == null || pelicula == null) {
+            throw new IllegalArgumentException("Fecha o pelicula nula");
+        }
         this.fecha = fecha;
         this.pelicula = pelicula;
-        this.sala = sala;
+        this.sala = null;
         this.butacas = new ArrayList<>();
         for(i=1; i<=MAX_FILA; i++){
             for(j=1; j<=MAX_COLUM; j++){
@@ -48,12 +52,18 @@ public class Sesion {
     }
 
     /**
-     * Añade la fecha a la sesion
+     * Modifica la fecha a la sesion
      *
-     * @param fecha fecha a añadir
+     * @param fecha fecha por la cual se quiere modificar
+     * @return boolean, true si se ha añadido la fecha correctamente
+     * @throws {InvalidArgumentException}
      */
-    public void setFecha(LocalDateTime fecha) {
+    public boolean setFecha(LocalDateTime fecha) {
+        if(fecha == null){
+            throw new IllegalArgumentException("Fecha nula");
+        }
         this.fecha = fecha;
+        return true;
     }
 
     /**
@@ -65,27 +75,27 @@ public class Sesion {
         return pelicula;
     }
 
-
-    /**
-     * Añade una pelicula a la sesion
-     *
-     * @param pelicula pelicula que hay que añadir a la sesion
-     * @return boolean: true si se añade la pelicula, false en caso contrario
-     */
-    /*public boolean anadirPelicula(Pelicula pelicula) {
-        if(this.pelicula == pelicula){
-            return false;
-        }
-        this.pelicula=pelicula;
-        return true;
-    }*/
-
     /**
      * Devuelve la sala de sesion
-     * @return Sala: sala de la sesion
+     *
+     * @return Sala, sala de la sesion
      */
     public Sala getSala() {
         return sala;
+    }
+
+    /**
+     * Modifica la sala de la sesion
+     *
+     * @param sala Sala en la que se integra la sesion
+     * @throws {InvalidArgumentException}
+     */
+    public boolean setSala(Sala sala){
+        if(sala == null){
+            throw new IllegalArgumentException("Puntero de sala nula");
+        }
+        this.sala = sala;
+        return true;
     }
 
     /**
@@ -97,13 +107,23 @@ public class Sesion {
         return butacas;
     }
 
+    /**
+     * Devuelve el numero de butacas disponibles
+     *
+     * @return Entero, numero de butacas disponibles
+     */
     public int getButacasDisponibles() {
         return ButacasDisponibles;
     }
 
-    public void disminuirButacasDisponibles() {
-        if(this.ButacasDisponibles<0){
-            throw new IllegalArgumentException("Numero de butacas disponibles menor que 0: "+ButacasDisponibles);
+    /**
+     * Disminuye el numero de butacas disponibles
+     *
+     * @throws {InvalidArgumentException}
+     */
+    public void disminuirButacasDisponibles() throws IllegalAccessException {
+        if(this.ButacasDisponibles<=1){
+            throw new IllegalArgumentException("Numero de butacas disponibles menor que 1: "+ButacasDisponibles);
         }
         ButacasDisponibles -= 1;
     }

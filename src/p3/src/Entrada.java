@@ -1,12 +1,12 @@
 /**
  * Esta clase contiene la información de una Entrada
  *
- * @author Jorge Mateo Segura y José Antonio Muñoz Ortega *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
 package p3.src;
 
 public abstract class Entrada {
-    private static final double PRECIO = 9.20;
+    private static final double PRECIO = 9.20; /** Constante, Precio fijo de una entrada*/
     private double precio = PRECIO; /** Precio de la entrada*/
     private Sesion sesion; /** Sesion de la sala*/
     private Butaca butaca; /**Butaca de la entrada*/
@@ -16,8 +16,12 @@ public abstract class Entrada {
      *
      * @param sesion sesion a la que pertenece
      * @param butaca la butaca de la entrada
+     * @throws {InvalidArgumentException}
      */
     public Entrada(Sesion sesion, Butaca butaca) {
+        if(sesion == null || butaca == null){
+            throw new IllegalArgumentException("Sesion o butaca nula");
+        }
         this.sesion = sesion;
         this.butaca = butaca;
         this.butaca.setOcupada(true);

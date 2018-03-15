@@ -1,7 +1,7 @@
 /**
  * Esta clase contiene la informacion para saber si la entrada es del dia del espectador o no
  *
- * @author Jorge Mateo Segura y José Antonio Muñoz Ortega *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
 package p3.src;
 
@@ -25,7 +25,7 @@ public class EntradaDiaEspectador extends Entrada{
     /**
      * Devuelve el precio de la entrada dependiendo de si es el dia del espectador o no
      *
-     * @return precio de la entrada
+     * @return Double, precio de la entrada
      */
     @Override
     public double getPrecio() {
