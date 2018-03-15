@@ -11,6 +11,7 @@ public class Pelicula {
     private int anno; /** Anno de estreno*/
     private String sinopsis; /** Sinopsis*/
     private Genero genero; /** Genero cinematografico*/
+    private int duracion; /** Duracion en minutos*/
 
     /**
      * Constructor de Pelicula
@@ -21,15 +22,16 @@ public class Pelicula {
      * @param sinopsis Sinopsis(trama)
      * @param genero Genero cinematografico
      */
-    public Pelicula(String titulo, String director, int anno, String sinopsis, Genero genero) {
-        if(anno<1900){
-            throw new IllegalArgumentException("Anno menor que 1900: "+anno);
+    public Pelicula(String titulo, String director, int anno, String sinopsis, Genero genero, int duracion) {
+        if(anno<1900 || duracion<1){
+            throw new IllegalArgumentException("Anno menor que 1900 o duracion menor que 1: "+anno+", "+duracion);
         }
         this.titulo = titulo;
         this.director = director;
         this.anno = anno;
         this.sinopsis = sinopsis;
         this.genero = genero;
+        this.duracion = duracion;
     }
 
     /**
@@ -78,9 +80,18 @@ public class Pelicula {
     }
 
     /**
+     * Devuelve la duracion de la Pelicula
+     *
+     * @return Entero, duracion de la pelicula en minutos
+     */
+    public int getDuracion() {
+        return duracion;
+    }
+
+    /**
      * Muestra la informacion de la pelicula por pantalla
      */
     public void mostarInformacion() {
-        System.out.println("Titulo: "+titulo+"\n"+"Director: "+director+"\n"+"Año: "+anno+"\n"+"Sinopsis: "+sinopsis+"\n"+"Genero: "+genero.toString()+"\n");
+        System.out.println("Titulo: "+titulo+"\n"+"Director: "+director+"\n"+"Año: "+anno+"\n"+"Sinopsis: "+sinopsis+"\n"+"Genero: "+genero.toString()+"\n"+"Duracion: "+duracion+" min");
     }
 }

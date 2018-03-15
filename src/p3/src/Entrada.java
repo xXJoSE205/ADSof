@@ -6,7 +6,7 @@
 package p3.src;
 
 public abstract class Entrada {
-    public static final double PRECIO = 9.20;
+    private static final double PRECIO = 9.20;
     private double precio = PRECIO; /** Precio de la entrada*/
     private Sesion sesion; /** Sesion de la sala*/
     private Butaca butaca; /**Butaca de la entrada*/
@@ -17,7 +17,6 @@ public abstract class Entrada {
      * @param sesion sesion a la que pertenece
      * @param butaca la butaca de la entrada
      */
-
     public Entrada(Sesion sesion, Butaca butaca) {
         this.sesion = sesion;
         this.butaca = butaca;
@@ -29,7 +28,6 @@ public abstract class Entrada {
      *
      * @return int con el precio
      */
-
     public double getPrecio() {
         return precio;
     }
