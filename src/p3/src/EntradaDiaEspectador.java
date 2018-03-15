@@ -9,6 +9,7 @@ import java.time.DayOfWeek;
 
 public class EntradaDiaEspectador extends Entrada{
 
+    public static final double DESCUENTO = 4;
     private static final DayOfWeek DIA_ESPECTADOR = DayOfWeek.WEDNESDAY;
 
     /**
@@ -30,7 +31,7 @@ public class EntradaDiaEspectador extends Entrada{
     public double getPrecio() {
         double precio = super.getPrecio();
         if(super.getSesion().getFecha().getDayOfWeek() == DIA_ESPECTADOR){
-            precio = precio-4;
+            precio = precio - DESCUENTO;
         }
         return precio;
     }

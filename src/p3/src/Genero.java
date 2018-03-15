@@ -7,7 +7,7 @@ package p3.src;
 
 public enum Genero {
     ACCION("Accion"),
-    CIENCIAFICCION("Ciencia Ficcion"),
+    CIENCIA_FICCION("Ciencia Ficcion"),
     DRAMA("Drama"),
     COMEDIA("Comedia"),
     FANTASIA("Fantasia"),

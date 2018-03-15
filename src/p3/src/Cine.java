@@ -101,9 +101,9 @@ public class Cine {
      * @param sala Sala a la que anadir la Sesion
      * @return Boolean: true, si se anaden correctamente la Pelicula y la Sala, false en caso contrario
      */
-    public boolean anadirPeliculaSala(Pelicula pelicula, Sesion sesion, Sala sala){
+    /*public boolean anadirPeliculaSala(Pelicula pelicula, Sesion sesion, Sala sala){
         return sesion.anadirPelicula(pelicula) && sala.anadirSesion(sesion);
-    }
+    }*/
 
 
     /**
@@ -115,14 +115,17 @@ public class Cine {
     public boolean venderEntrada(Sesion sesion){
         EntradaDiaEspectador e;
 
-        for(Butaca butaca : sesion.getButacas()){
-            if(!butaca.isOcupada()){
-                e=new EntradaDiaEspectador(sesion,butaca);
-                recaudacion=recaudacion+e.getPrecio();
-                butaca.setOcupada(true);
-                entradas.add(e);
-                System.out.println("Precio: "+ e.getPrecio()+"Sala: "+ e.getSesion().getSala()+" Fila: "+e.getButaca().getFila()+ "Numero: "+ e.getButaca().getNumero());
-                return true;
+        if(sesion.getButacasDisponibles()>0) {
+            for (Butaca butaca : sesion.getButacas()) {
+                if (!butaca.isOcupada()) {
+                    e = new EntradaDiaEspectador(sesion, butaca);
+                    recaudacion = recaudacion + e.getPrecio();
+                    butaca.setOcupada(true);
+                    sesion.disminuirButacasDisponibles();
+                    entradas.add(e);
+                    System.out.println("Precio: " + e.getPrecio() + "Sala: " + e.getSesion().getSala() + " Fila: " + e.getButaca().getFila() + "Numero: " + e.getButaca().getNumero());
+                    return true;
+                }
             }
         }
         return false;

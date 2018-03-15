@@ -12,13 +12,15 @@ public class Sala {
     private int identificador; /** Identificador de la sala*/
     private List<Sesion> sesiones; /** Lista de sesiones de la sala*/
 
-
     /**
      * Constructor de sala
      *
      * @param identificador identificador de la sala
      */
     public Sala(int identificador) {
+        if(identificador<1){
+            throw new IllegalArgumentException("Identificador menor que 1: "+identificador);
+        }
         this.identificador = identificador;
         this.sesiones = new ArrayList<>();
 

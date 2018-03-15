@@ -22,6 +22,9 @@ public class Pelicula {
      * @param genero Genero cinematografico
      */
     public Pelicula(String titulo, String director, int anno, String sinopsis, Genero genero) {
+        if(anno<1900){
+            throw new IllegalArgumentException("Anno menor que 1900: "+anno);
+        }
         this.titulo = titulo;
         this.director = director;
         this.anno = anno;
@@ -78,6 +81,6 @@ public class Pelicula {
      * Muestra la informacion de la pelicula por pantalla
      */
     public void mostarInformacion() {
-        System.out.println("Titulo: "+titulo+"\n"+"Director: "+director+"\n"+"Año: "+anno+"\n"+"Sinopsis: "+sinopsis+"\n"+"Genero: "+genero+"\n");
+        System.out.println("Titulo: "+titulo+"\n"+"Director: "+director+"\n"+"Año: "+anno+"\n"+"Sinopsis: "+sinopsis+"\n"+"Genero: "+genero.toString()+"\n");
     }
 }
