@@ -29,13 +29,24 @@ public class SalaTest {
     @Test
     public void getIdentificador() {
         System.out.println("Sala: Prueba getIdentificador");
+        assertTrue(sala.getIdentificador() == 5);
     }
 
     @Test
     public void getSesiones() {
+        System.out.println("Sala: Prueba getSesiones");
+        assertNotNull(sala.getSesiones());
     }
 
     @Test
-    public void anadirSesion() {
+    public void anadirSesion1() {
+        System.out.println("Sala: Prueba anadirSesion1");
+        sala.anadirSesion(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void anadirSesion2() {
+        System.out.println("Sala: Prueba anadirSesion2");
+        sala.anadirSesion(null);
     }
 }
