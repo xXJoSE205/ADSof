@@ -104,11 +104,11 @@ public class Cine {
     }
 
     /**
-     * Añade una Pelicula a una Sesion y a una Sala
+     * Añade una Sesion a una Sala
      *
-     * @param sesion Sesion a la que añadir la Pelicua
+     * @param sesion Sesion a añadir
      * @param sala Sala a la que añadir la Sesion
-     * @return Boolean: true, si se añaden correctamente la Pelicula y la Sala, false en caso contrario
+     * @return Boolean: true, si se añaden correctamente la Sala, false en caso contrario
      */
     public boolean anadirSalaSesion(Sala sala, Sesion sesion){
         return sala.anadirSesion(sesion);
