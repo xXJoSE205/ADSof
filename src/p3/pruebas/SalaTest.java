@@ -20,6 +20,12 @@ public class SalaTest {
         ses = new Sesion(LocalDateTime.of(2018, 3, 15, 17, 30), peli);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor(){
+        System.out.println("Sala: Prueba constructor");
+        Sala sala2 = new Sala(0);
+    }
+
     @Test
     public void getIdentificador() {
         System.out.println("Sala: Prueba getIdentificador");

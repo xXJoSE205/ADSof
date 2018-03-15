@@ -58,6 +58,10 @@ public class Sala {
         if(sesion == null){
             throw new IllegalArgumentException("Sesion nula");
         }
+        if(sesiones.size()==0){
+            sesion.setSala(this);
+            return sesiones.add(sesion);
+        }
         for(Sesion ses: sesiones){
             peli = sesion.getPelicula();
             if(sesion.getFecha().compareTo(ses.getFecha())<0){
