@@ -5,6 +5,7 @@
  */
 package p3.src;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,9 +102,10 @@ public class Cine {
      * @param sala Sala a la que anadir la Sesion
      * @return Boolean: true, si se anaden correctamente la Pelicula y la Sala, false en caso contrario
      */
-    /*public boolean anadirPeliculaSala(Pelicula pelicula, Sesion sesion, Sala sala){
-        return sesion.anadirPelicula(pelicula) && sala.anadirSesion(sesion);
-    }*/
+    public boolean anadirPeliculaSala(Pelicula pelicula, Sesion sesion, Sala sala, LocalDateTime fecha){
+        Sesion s = new Sesion(fecha, pelicula, sala);
+        return sala.anadirSesion(s);
+    }
 
 
     /**
