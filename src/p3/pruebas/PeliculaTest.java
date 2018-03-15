@@ -11,13 +11,25 @@ public class PeliculaTest {
 
     @Before
     public void setUp() throws Exception {
-        p1 = new Pelicula("Dragonball Evolution","James Wong",2009,"Cuenta la epica aventura de un joven que descubre su destino: salvar al mundo de las fuerzas malvadas", Genero.FANTASIA);
+        p1 = new Pelicula("Dragonball Evolution","James Wong",2009,"Cuenta la epica aventura de un joven que descubre su destino: salvar al mundo de las fuerzas malvadas", Genero.FANTASIA, 90);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void constructor() {
-        System.out.println("Pelicula: Prueba constructor");
-        Pelicula p2 = new Pelicula("A","B",496,"C", Genero.ACCION);
+    public void constructor1() {
+        System.out.println("Pelicula: Prueba constructor1");
+        Pelicula p2 = new Pelicula("A","B",496,"C", Genero.ACCION, 120);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor2() {
+        System.out.println("Pelicula: Prueba constructor2");
+        Pelicula p2 = new Pelicula("A","B",1996,"C", Genero.ACCION, -56);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor3() {
+        System.out.println("Pelicula: Prueba constructor3");
+        Pelicula p2 = new Pelicula("A","B",496,"C", Genero.ACCION, -56);
     }
 
     @Test
@@ -48,6 +60,12 @@ public class PeliculaTest {
     public void getGenero() {
         System.out.println("Pelicula: Prueba getGenero");
         assertTrue(p1.getGenero() == Genero.FANTASIA);
+    }
+
+    @Test
+    public void getDuracion() {
+        System.out.println("Pelicula: Prueba getDuracion");
+        assertTrue(p1.getDuracion() == 90);
     }
 
     @Test
