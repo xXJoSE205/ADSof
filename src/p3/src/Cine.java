@@ -95,12 +95,12 @@ public class Cine {
     }
 
     /**
-     * Anade una Pelicula a una Sesion y a una Sala
+     * Añade una Pelicula a una Sesion y a una Sala
      *
-     * @param pelicula Pelicula a anadir
-     * @param sesion Sesion a la que anadir la Pelicua
-     * @param sala Sala a la que anadir la Sesion
-     * @return Boolean: true, si se anaden correctamente la Pelicula y la Sala, false en caso contrario
+     * @param pelicula Pelicula a añadir
+     * @param sesion Sesion a la que añadir la Pelicua
+     * @param sala Sala a la que añadir la Sesion
+     * @return Boolean: true, si se añaden correctamente la Pelicula y la Sala, false en caso contrario
      */
     public boolean anadirPeliculaSala(Pelicula pelicula, Sesion sesion, Sala sala, LocalDateTime fecha){
         Sesion s = new Sesion(fecha, pelicula, sala);

@@ -46,18 +46,28 @@ public class Sala {
     }
 
     /**
-     * Anade una sesion a la sala
+     * Añade una sesion a la sala
      *
-     * @param sesion sesion que tiene que añadir a la lista
+     * @param sesion sesion que se quiere que añadir a la lista
      * @return boolean: true si se añade la sesion, false en caso contrario
      */
     public boolean anadirSesion(Sesion sesion) {
-        for(Sesion x: sesiones){
-            if(x.getFecha().isEqual(sesion.getFecha())){
+        Pelicula peli;
+        for(Sesion ses: sesiones){
+            peli = sesion.getPelicula();
+            if(sesion.getFecha().compareTo(ses.getFecha())<0){
+                if(ses.getFecha().compareTo(sesion.getFecha())>peli.getDuracion()){
+                    return this.sesiones.add(sesion);
+                }
+                return false;
+            }else{
+                if(sesion.getFecha().compareTo(ses.getFecha())>peli.getDuracion()){
+                    return this.sesiones.add(sesion);
+                }
                 return false;
             }
         }
-        return this.sesiones.add(sesion);
+        return false;
     }
 
 

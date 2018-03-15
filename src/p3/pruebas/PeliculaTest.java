@@ -11,7 +11,9 @@ public class PeliculaTest {
 
     @Before
     public void setUp() throws Exception {
-        p1 = new Pelicula("Dragonball Evolution","James Wong",2009,"Cuenta la epica aventura de un joven que descubre su destino: salvar al mundo de las fuerzas malvadas", Genero.FANTASIA, 90);
+        p1 = new Pelicula("Dragonball Evolution","James Wong",2009,"Cuenta la epica "
+                +"aventura de un joven que descubre su destino: salvar al mundo de las fuerzas malvadas",
+                Genero.FANTASIA, 90);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -53,7 +55,8 @@ public class PeliculaTest {
     @Test
     public void getSinopsis() {
         System.out.println("Pelicula: Prueba getSinopsis");
-        assertTrue(p1.getSinopsis().equals("Cuenta la epica aventura de un joven que descubre su destino: salvar al mundo de las fuerzas malvadas"));
+        assertTrue(p1.getSinopsis().equals("Cuenta la epica aventura de un joven que descubre su destino: "
+                +"salvar al mundo de las fuerzas malvadas"));
     }
 
     @Test
