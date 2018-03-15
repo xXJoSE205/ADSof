@@ -1,3 +1,4 @@
+
 /**
  * Esta clase contiene la información de un Cine
  *
@@ -110,9 +111,12 @@ public class Cine {
      * Permite comprar una entrada para cierta sesion
      *
      * @param sesion sesion de la que se quiere comprar una entrada
-     * @return boolean: true si se añade la sesion, false en caso contrario
+     * @return boolean: true si se vende la entrada, false en caso contrario
      */
     public boolean venderEntrada(Sesion sesion){
+        if(sesion==null){
+            return false;
+        }
         EntradaDiaEspectador e;
 
         if(sesion.getButacasDisponibles()>0) {
@@ -134,9 +138,12 @@ public class Cine {
     /**
      *
      * @param pelicula pelicula que se quiere eliminar
-     * @return boolean true si se ha borrado la pelicula, false en caso de error o que la pelicula no se encuentre
+     * @return int: numero de sesiones eliminadas si se ha borrado la pelicula, -1 en caso de error o 0 em caso de que la pelicula no se encuentre
      */
-    public boolean removePelicula(Pelicula pelicula){
+    public int removePelicula(Pelicula pelicula){
+        if(pelicula==null){
+            return -1;
+        }
         int x=0;
         for(Pelicula pelicula1 : peliculas){
             if( pelicula1 == pelicula){
@@ -150,8 +157,22 @@ public class Cine {
                 }
                 peliculas.remove(pelicula);
             }
-            return true;
+            return x;
         }
-        return false;
+        return 0;
     }
+
+    /**
+     *
+     * @param sala sala que se quiere añadir
+     * @return boolean: true si se añade la sala, false en caso contrario
+     */
+    public boolean annadirSala(Sala sala){
+        if(sala==null){
+            return false;
+        }
+        salas.add(sala);
+        return true;
+    }
+
 }
