@@ -104,7 +104,7 @@ public class SesionTest {
     public void getSala1() {
         Sala sala = new Sala(2);
         System.out.println("Sesion: Prueba getSala1");
-        sala.getSesiones().add(ses1)
+        sala.anadirSesion(ses1);
         assertNotNull(ses1.getSala());
     }
 
