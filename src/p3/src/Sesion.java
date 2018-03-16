@@ -144,10 +144,10 @@ public class Sesion {
      */
     @Override
     public String toString() {
-        return "Sesion: " +
-                "Fecha: " + fecha.toString() +
-                ", Pelicula: " + pelicula.getTitulo() +
-                ", Sala: " + sala.getIdentificador() +
-                ", Butacas disponibles: " + butacasDisponibles;
+        return "Sesion: \n" +
+                "\tFecha: " + fecha.toString() +
+                "\n\tPelicula: " + pelicula.getTitulo() +
+                "\n\tSala: " + sala.getIdentificador() +
+                "\n\tButacas disponibles: " + butacasDisponibles;
     }
 }

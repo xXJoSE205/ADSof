@@ -231,19 +231,23 @@ public class Cine {
      */
     public void mostrarCartelera() throws IllegalAccessException {
         if(peliculas.size()==0){
-            throw new IllegalAccessException("Error no hay peliculas en cartelera");
+            throw new IllegalAccessException("No hay peliculas en cartelera");
         }
         for(Pelicula peli: peliculas){
             peli.mostarInformacion();
         }
     }
 
+    /**
+     * Muestra por pantalla la informacion de las sesiones
+     */
     public void mostrarSesiones(){
         for(Sala sala: salas){
-            for(Sesion sesion: sala.getSesiones()){
-                System.out.println(sesion.toString()+"\n");
+            if(sala.getSesiones().size()>0) {
+                for (Sesion sesion : sala.getSesiones()) {
+                    System.out.println(sesion.toString());
+                }
             }
         }
-        return;
     }
 }
