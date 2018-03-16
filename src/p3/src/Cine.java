@@ -117,6 +117,9 @@ public class Cine {
      * @return Boolean: true, si se añaden correctamente la Sala, false en caso contrario
      */
     public boolean anadirSalaSesion(Sala sala, Sesion sesion){
+        if(sala==null || sesion==null){
+            throw  new IllegalArgumentException("Sala o sesion nulo");
+        }
         return sala.anadirSesion(sesion);
     }
 
@@ -216,7 +219,7 @@ public class Cine {
      */
     public boolean anadirPelicula(Pelicula pelicula){
         if(pelicula==null){
-            return false;
+            throw new IllegalArgumentException("Pelicula nula");
         }
         peliculas.add(pelicula);
         return true;
