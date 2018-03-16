@@ -138,6 +138,10 @@ public class Sesion {
         return true;
     }
 
+    /**
+     * Crea un string con la informacion de la sesion, con la fecha, la pelicula, la sala y el numero de butacas disponibles
+     * @return string, el string con la informacion
+     */
     @Override
     public String toString() {
         return "Sesion: " +
