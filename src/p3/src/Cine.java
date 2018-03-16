@@ -209,6 +209,7 @@ public class Cine {
     }
 
     /**
+     * Añade una pelicula al cine
      *
      * @param pelicula pelicula que se quiere añadir
      * @return boolean: true si se añade la pelicula, false en caso contrario
