@@ -123,7 +123,6 @@ public class Cine {
         return sala.anadirSesion(sesion);
     }
 
-
     /**
      * Permite comprar una entrada para cierta sesion
      *
@@ -132,7 +131,7 @@ public class Cine {
      * @throws IllegalArgumentException si la sesion es nula, si la sesion no tiene sala asignada o si las butacas estan ocupadas
      * @throws IllegalAccessException si la sesion no esta asignada a una sala
      */
-    public boolean venderEntrada(Sesion sesion) throws IllegalAccessException {
+    public boolean ventaEntradas(Sesion sesion) throws IllegalAccessException {
         EntradaDiaEspectador e;
 
         if(sesion==null){
@@ -167,7 +166,7 @@ public class Cine {
      * @return int, numero de sesiones eliminadas si se ha borrado la pelicula, 0 si no existe esa pelicula
      * @throws IllegalArgumentException si la pelicula es nula
      */
-    public int removePelicula(Pelicula pelicula){
+    public int removePeliculaCartelera(Pelicula pelicula){
         int x=0;
 
         if(pelicula==null){
