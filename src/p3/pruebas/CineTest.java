@@ -1,3 +1,8 @@
+/**
+ * Esta clase contiene el test de la clase Cine
+ *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
+ */
 package p3.pruebas;
 
 import org.junit.Before;
