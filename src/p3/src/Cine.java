@@ -227,7 +227,7 @@ public class Cine {
     /**
      * Muestra por pantalla todas las peliculas disponibles
      *
-     * @throws IllegalAccessException si no hay peliculas
+     * @throws IllegalAccessException si no hay peliculas en cartelera
      */
     public void mostrarCartelera() throws IllegalAccessException {
         if(peliculas.size()==0){
