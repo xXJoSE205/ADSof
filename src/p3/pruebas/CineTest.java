@@ -132,7 +132,7 @@ public class CineTest {
     }
 
     /**
-     * Test 1 de setNombre, se le pasa un nombre, se espera un true
+     * Test 1 de setNombre, se comprueba si se ha cambiado el nombre correctamente
      */
     @Test
     public void setNombre1() {
@@ -151,7 +151,7 @@ public class CineTest {
     }
 
     /**
-     * Test 1 de ventaEntradas, se comprueba que al vender una entrada devuelva true
+     * Test 1 de ventaEntradas, se comprueba que se ha vendido la entrada correctamente
      */
     @Test
     public void ventaEntradas1() throws IllegalAccessException {
@@ -191,7 +191,7 @@ public class CineTest {
     }
 
     /**
-     * Test de removePelicula, comprueba que el metodo devuelve 1
+     * Test de removePelicula, comprueba que la pelicula se ha eliminado correctamente
      */
     @Test
     public void removePelicula() {
@@ -218,7 +218,7 @@ public class CineTest {
     }
 
     /**
-     * Test 1 de annadirSala, se espera un true
+     * Test 1 de annadirSala, se comprueba que la sala se ha añadido correctamente
      */
     @Test
     public void annadirSala1(){
@@ -238,7 +238,7 @@ public class CineTest {
     }
 
     /**
-     * Test 1 de anadirPelicula, se espera un true.
+     * Test 1 de anadirPelicula, se comprueba que la pelicula se ha añdido correctamente
      */
     @Test
     public void anadirPelicula1(){
@@ -259,7 +259,7 @@ public class CineTest {
     }
 
     /**
-     * Test 1 de anadirSalaSesion, se espera un true
+     * Test 1 de anadirSalaSesion, se comprueba que la sesion se ha añadido a la sala correctamente
      */
     @Test
     public void anadirSalaSesion1(){

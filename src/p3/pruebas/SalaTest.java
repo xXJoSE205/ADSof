@@ -43,7 +43,7 @@ public class SalaTest {
     }
 
     /**
-     * Test de getIdentificador, se espera como resultado un 5.
+     * Test de getIdentificador, se comprueba que el identificador del setUp es igual a 5.
      */
     @Test
     public void getIdentificador() {
@@ -52,7 +52,7 @@ public class SalaTest {
     }
 
     /**
-     * Test de getSesiones, se espera como resultado una lista distinta de NULL
+     * Test de getSesiones, se comprueba que las sesiones del setUp es distinto de NULL
      */
     @Test
     public void getSesiones() {
@@ -61,7 +61,7 @@ public class SalaTest {
     }
 
     /**
-     * Test 1 de anadirSesion, se espera como resultado una lista distinta de NULL
+     * Test 1 de anadirSesion, se comprueba que la sesion se ha añadido correctamente
      */
     @Test
     public void anadirSesion1() {
