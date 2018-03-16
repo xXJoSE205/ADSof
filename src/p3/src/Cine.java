@@ -224,4 +224,17 @@ public class Cine {
         return true;
     }
 
+    /**
+     * Muestra por pantalla todas las peliculas disponibles
+     *
+     * @throws IllegalAccessException si no hay peliculas
+     */
+    public void mostrarCartelera() throws IllegalAccessException {
+        if(peliculas.size()==0){
+            throw new IllegalAccessException("Error no hay peliculas en cartelera");
+        }
+        for(Pelicula peli: peliculas){
+            peli.mostarInformacion();
+        }
+    }
 }

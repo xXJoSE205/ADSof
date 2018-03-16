@@ -194,8 +194,8 @@ public class CineTest {
      * Test de removePelicula, comprueba que el metodo devuelve 1
      */
     @Test
-    public void removePelicula() {
-        System.out.println("Cine: Prueba removePelicula");
+    public void removePeliculaCartelera1() {
+        System.out.println("Cine: Prueba removePeliculaCartelera1");
         Sala sala = new Sala(7);
         Pelicula p1 = new Pelicula("Zero Two", "Ichigo",2018,
                 "Una historia de robots controlados por humanos", Genero.ACCION, 90);
@@ -204,7 +204,6 @@ public class CineTest {
         cine.anadirPelicula(p1);
         sala.anadirSesion(sesion);
         assertTrue(cine.removePeliculaCartelera(p1)>0);
-        }
     }
 
     /**
@@ -212,8 +211,8 @@ public class CineTest {
      *  La pelicula es NULL
      */
     @Test (expected = IllegalArgumentException.class)
-    public void removePelicula2() {
-        System.out.println("Cine: Prueba removePelicula1");
+    public void removePeliculaCartelera2() {
+        System.out.println("Cine: Prueba removePeliculaCartelera1");
         cine.removePeliculaCartelera(null);
     }
 
@@ -303,5 +302,27 @@ public class CineTest {
     public void anadirSalaSesion4() {
         System.out.println("Cine: Prueba anadirSalaSesion4");
         cine.anadirSalaSesion(null,null);
+    }
+
+    /**
+     * Test 1 de mostrarCartelera, se muestra por pantalla la pelicula asignada
+     */
+    @Test
+    public void mostrarCartelera1() throws IllegalAccessException {
+        System.out.println("Cine: Prueba mostrarCartelera1");
+        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018,
+                "Una historia de robots controlados por humanos",Genero.ACCION, 90);
+        cine.anadirPelicula(p1);
+        cine.mostrarCartelera();
+    }
+
+    /**
+     * Test 1 de mostrarCartelera, se espera un IllegalAccesException
+     * No se han añadido peliculas al cine
+     */
+    @Test(expected = IllegalAccessException.class)
+    public void mostrarCartelera2() throws IllegalAccessException {
+        System.out.println("Cine: Prueba mostrarCartelera2");
+        cine.mostrarCartelera();
     }
 }
