@@ -9,14 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sala {
-    private int identificador; /** Identificador de la sala*/
-    private List<Sesion> sesiones; /** Lista de sesiones de la sala*/
+    /** Identificador de la sala*/
+    private int identificador;
+    /** Lista de sesiones de la sala*/
+    private List<Sesion> sesiones;
 
     /**
      * Constructor de sala
      *
      * @param identificador identificador de la sala
-     * @throws Error si el identificador es menor que 1
+     * @throws IllegalArgumentException si el identificador es menor que 1
      */
     public Sala(int identificador) {
         if(identificador<1){
@@ -51,7 +53,7 @@ public class Sala {
      *
      * @param sesion sesion que se quiere que añadir a la lista
      * @return boolean: true si se añade la sesion, false en caso contrario
-     * @throws Error si la sesion es nula o si ya hay una pelicula a la misma hora
+     * @throws IllegalArgumentException si la sesion es nula o si ya hay una pelicula a la misma hora
      */
     public boolean anadirSesion(Sesion sesion) {
         Pelicula peli;

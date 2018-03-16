@@ -10,20 +10,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sesion {
-    public static final int MAX_FILA = 10; /** Maximo de filas en la sala*/
-    public static final int MAX_COLUM = 20; /** Maximo de asientos por fila*/
-    private LocalDateTime fecha; /** Fecha de la sesion*/
-    private Pelicula pelicula; /** Pelicula de la sesion*/
-    private Sala sala; /** Sala de la sesion*/
-    private List<Butaca> butacas; /** Lista de butacas de la sala*/
-    private int butacasDisponibles = MAX_FILA*MAX_COLUM; /** Numero de butacas disponibles*/
+    /** Maximo de filas en la sala*/
+    public static final int MAX_FILA = 10;
+    /** Maximo de asientos por fila*/
+    public static final int MAX_COLUM = 20;
+    /** Fecha de la sesion*/
+    private LocalDateTime fecha;
+    /** Pelicula de la sesion*/
+    private Pelicula pelicula;
+    /** Sala de la sesion*/
+    private Sala sala;
+    /** Lista de butacas de la sala*/
+    private List<Butaca> butacas;
+    /** Numero de butacas disponibles*/
+    private int butacasDisponibles = MAX_FILA*MAX_COLUM;
 
     /**
      * Constructor de Sesion
      *
      * @param fecha fecha de la sesion
      * @param pelicula pelicula de la sesion
-     * @throws Error si algun argumento es nulo
+     * @throws IllegalArgumentException si algun argumento es nulo
      */
     public Sesion(LocalDateTime fecha, Pelicula pelicula) {
         int i, j;
@@ -56,7 +63,7 @@ public class Sesion {
      *
      * @param fecha fecha por la cual se quiere modificar
      * @return boolean, true si se ha añadido la fecha correctamente
-     * @throws {InvalidArgumentException}
+     * @throws IllegalArgumentException si la fecha es nula
      */
     public boolean setFecha(LocalDateTime fecha) {
         if(fecha == null){
@@ -88,7 +95,8 @@ public class Sesion {
      * Modifica la sala de la sesion
      *
      * @param sala Sala en la que se integra la sesion
-     * @throws {InvalidArgumentException}
+     * @return boolean, true si se modifica correctamente
+     * @throws IllegalArgumentException si la sala es nula
      */
     public boolean setSala(Sala sala){
         if(sala == null){
@@ -120,9 +128,9 @@ public class Sesion {
      * Disminuye el numero de butacas disponibles
      *
      * @return boolean, true si se ha disminuido el numor correctamente
-     * @throws Error si el numero de butacas disponibles es menor que 1
+     * @throws IllegalArgumentException si el numero de butacas disponibles es menor que 1
      */
-    public boolean disminuirButacasDisponibles() throws IllegalAccessException {
+    public boolean disminuirButacasDisponibles() {
         if(this.butacasDisponibles<1){
             throw new IllegalArgumentException("Numero de butacas disponibles menor que 1: "+butacasDisponibles);
         }

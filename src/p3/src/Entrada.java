@@ -6,17 +6,21 @@
 package p3.src;
 
 public abstract class Entrada {
-    private static final double PRECIO = 9.20; /** Constante, Precio fijo de una entrada*/
-    private double precio = PRECIO; /** Precio de la entrada*/
-    private Sesion sesion; /** Sesion de la sala*/
-    private Butaca butaca; /**Butaca de la entrada*/
+    /** Constante, Precio fijo de una entrada*/
+    private static final double PRECIO = 9.20;
+    /** Precio de la entrada*/
+    private double precio = PRECIO;
+    /** Sesion de la sala*/
+    private Sesion sesion;
+    /**Butaca de la entrada*/
+    private Butaca butaca;
 
     /**
      * Constructor de Entrada
      *
      * @param sesion sesion a la que pertenece
      * @param butaca la butaca de la entrada
-     * @throws Error si algun argumento es nulo
+     * @throws IllegalArgumentException si algun argumento es nulo
      */
     public Entrada(Sesion sesion, Butaca butaca) {
         if(sesion == null || butaca == null){

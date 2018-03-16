@@ -9,19 +9,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cine {
-    private String nombre; /** Nombre del Cine*/
-    private String direccion; /** Direccion del Cine*/
-    private List<Pelicula> peliculas; /** Lista de Peliculas del Cine*/
-    private List<Sala> salas; /** Lista de Salas del Cine*/
-    private List<EntradaDiaEspectador> entradas; /** Lista de Entradas vendidas del Cine*/
-    private double recaudacion = 0; /** Recaudacion total del Cine*/
+    /** Nombre del Cine*/
+    private String nombre;
+    /** Direccion del Cine*/
+    private String direccion;
+    /** Lista de Peliculas del Cine*/
+    private List<Pelicula> peliculas;
+    /** Lista de Salas del Cine*/
+    private List<Sala> salas;
+    /** Lista de Entradas vendidas del Cine*/
+    private List<EntradaDiaEspectador> entradas;
+    /** Recaudacion total del Cine*/
+    private double recaudacion = 0;
 
     /**
      * Constructor de Cine, crea nuevas listas de Peliculas, Salas y Entradas
      *
      * @param nombre Nombre del Cine
      * @param direccion Direccion del cine
-     * @throws Error si algun argumento es nulo
+     * @throws IllegalArgumentException si algun argumento es nulo
      */
     public Cine(String nombre, String direccion) {
         if(nombre == null || direccion == null){
@@ -93,7 +99,7 @@ public class Cine {
      *
      * @param nombre Cadena con el nuevo nombre del Cine
      * @return boolean, true si se modifica el nombre correctamente
-     * @throws Error si el nombre es nulo
+     * @throws IllegalArgumentException si el nombre es nulo
      */
     public boolean setNombre(String nombre) {
         if(nombre == null){
@@ -120,7 +126,8 @@ public class Cine {
      *
      * @param sesion sesion de la que se quiere comprar una entrada
      * @return boolean: true si se vende la entrada, false en caso contrario
-     * @throws Error si la sesion es nula, si la sesion no tiene sala asignada o si las butacas estan ocupadas
+     * @throws IllegalArgumentException si la sesion es nula, si la sesion no tiene sala asignada o si las butacas estan ocupadas
+     * @throws IllegalAccessException si la sesion no esta asignada a una sala
      */
     public boolean venderEntrada(Sesion sesion) throws IllegalAccessException {
         EntradaDiaEspectador e;
@@ -155,7 +162,7 @@ public class Cine {
      *
      * @param pelicula pelicula que se quiere eliminar
      * @return int, numero de sesiones eliminadas si se ha borrado la pelicula, 0 si no existe esa pelicula
-     * @throws Error si la pelicula es nula
+     * @throws IllegalArgumentException si la pelicula es nula
      */
     public int removePelicula(Pelicula pelicula){
         int x=0;
@@ -191,7 +198,7 @@ public class Cine {
      *
      * @param sala sala que se quiere añadir
      * @return boolean: true si se añade la sala
-     * @throws Error si la sala es nula
+     * @throws IllegalArgumentException si la sala es nula
      */
     public boolean annadirSala(Sala sala){
         if(sala == null){

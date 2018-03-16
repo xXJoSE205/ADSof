@@ -6,16 +6,19 @@
 package p3.src;
 
 public class Butaca {
-    private int fila; /** Numero de la fila*/
-    private int numero; /** Numero en la fila*/
-    private boolean ocupada = false; /** Estado de la butaca, originalmente false(desocupada)*/
+    /** Numero de la fila*/
+    private int fila;
+    /** Numero en la fila*/
+    private int numero;
+    /** Estado de la butaca, originalmente false(desocupada)*/
+    private boolean ocupada = false;
 
     /**
      * Constructor de Butaca
      *
      * @param fila Numero de la fila
      * @param numero Numero en la fila
-     * @throws Error si alguno de los argumentos es menor que 1
+     * @throws IllegalArgumentException si alguno de los argumentos es menor que 1
      */
     public Butaca(int fila, int numero) {
         if(fila<1 || numero<1){
@@ -55,7 +58,7 @@ public class Butaca {
     /**
      * Cambia el estado de la butaca
      *
-     * @param ocupada, true si se va a ocupar, false en caso contrario
+     * @param ocupada true si se va a ocupar, false en caso contrario
      */
     public void setOcupada(boolean ocupada) {
         this.ocupada = ocupada;
