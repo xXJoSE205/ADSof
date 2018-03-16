@@ -137,4 +137,13 @@ public class Sesion {
         butacasDisponibles -= 1;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Sesion: " +
+                "Fecha: " + fecha.toString() +
+                ", Pelicula: " + pelicula.getTitulo() +
+                ", Sala: " + sala.getIdentificador() +
+                ", Butacas disponibles: " + butacasDisponibles;
+    }
 }

@@ -325,4 +325,19 @@ public class CineTest {
         System.out.println("Cine: Prueba mostrarCartelera2");
         cine.mostrarCartelera();
     }
+
+    /**
+     * Test mostrarSesiones, muestra por pantalla la informacion de todas las sesiones
+     */
+    @Test
+    public void  mostrarSesiones(){
+        System.out.println("Cine mostrarSesiones");
+        Sala sala= new Sala(7);
+        Pelicula p1=new Pelicula("Zero Two", "Ichigo",2018,
+                "Una historia de robots controlados por humanos",Genero.ACCION, 90);
+        Sesion sesion= new Sesion(LocalDateTime.of(2018,12,03,15,20),p1);
+        sala.anadirSesion(sesion);
+        cine.annadirSala(sala);
+        cine.mostrarSesiones();
+    }
 }

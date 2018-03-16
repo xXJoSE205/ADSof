@@ -237,4 +237,13 @@ public class Cine {
             peli.mostarInformacion();
         }
     }
+
+    public void mostrarSesiones(){
+        for(Sala sala: salas){
+            for(Sesion sesion: sala.getSesiones()){
+                System.out.println(sesion.toString()+"\n");
+            }
+        }
+        return;
+    }
 }
