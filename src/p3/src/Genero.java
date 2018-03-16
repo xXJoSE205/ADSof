@@ -6,16 +6,25 @@
 package p3.src;
 
 public enum Genero {
-    ACCION("Accion"),
-    CIENCIA_FICCION("Ciencia Ficcion"),
-    DRAMA("Drama"),
-    COMEDIA("Comedia"),
-    FANTASIA("Fantasia"),
-    TERROR("Terror"),
-    ROMANCE("Romance"),
-    MUSICAL("Musical"),
-    SUSPENSE("Suspense");
+    /** Genero de accion*/
+    ACCION(1),
+    /** Genero de ciencia ficcion*/
+    CIENCIA_FICCION(2),
+    /** Genero de drama*/
+    DRAMA(3),
+    /** Genero de comedia*/
+    COMEDIA(4),
+    /** Genero de fantasia*/
+    FANTASIA(5),
+    /** Genero de terror*/
+    TERROR(6),
+    /** Genero de romance*/
+    ROMANCE(7),
+    /** Genero musical*/
+    MUSICAL(8),
+    /** Genero de suspense*/
+    SUSPENSE(9);
 
-    Genero(String genero) {
+    Genero(int genero) {
     }
 }
