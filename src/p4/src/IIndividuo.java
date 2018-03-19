@@ -1,5 +1,7 @@
 package p4.src;
 
+import java.util.List;
+
 public interface IIndividuo {
     public INodo getExpresion();
     public void setExpresion(INodo expresion);
