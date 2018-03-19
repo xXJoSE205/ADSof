@@ -56,7 +56,7 @@ public class CineTest {
     }
 
     /**
-     * Test de getNombre, se comprueba que el nombre del setUp es igual a "J & M"
+     * Test de getNombre, se comprueba que el nombre del setUp es igual a "J y M"
      */
     @Test
     public void getNombre() {
