@@ -1,6 +1,6 @@
 package p4.src;
 
-import com.sun.tools.javac.util.List;
+import java.util.List;
 
 public class Nodo {
     private String raiz;
