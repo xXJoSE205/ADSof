@@ -7,7 +7,7 @@ public class Terminal extends Nodo{
     }
 
     public String toString() {
-        return super.getRaiz();
+        return " "+super.getRaiz();
     }
 
     public double calcular() {

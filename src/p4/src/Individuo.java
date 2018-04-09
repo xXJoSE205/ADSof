@@ -29,8 +29,6 @@ public class Individuo implements IIndividuo{
     }
 
     public int getNumeroNodos() {
-        int contador = 1;
-
         return raiz.getDescendientes().size();
     }
 

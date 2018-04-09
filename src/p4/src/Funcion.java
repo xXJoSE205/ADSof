@@ -14,7 +14,7 @@ public class Funcion extends Nodo{
     }
 
     public String toString() {
-        String cadena = "( " + super.getRaiz() + " ";
+        String cadena = "( " + super.getRaiz();
 
         for(INodo n : listaDescendientes){
             cadena += n.toString();
