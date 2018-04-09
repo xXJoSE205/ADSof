@@ -19,7 +19,7 @@ public abstract class Funcion extends Nodo{
 
     @Override
     public String toString() {
-        String cadena = "( " + super.getRaiz();
+        String cadena = "( " + super.getRaiz()+" ";
 
         for(INodo n : descendientes){
             cadena += n.toString();
