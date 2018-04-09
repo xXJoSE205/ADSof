@@ -3,19 +3,15 @@ package p4.src;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Terminal extends Nodo{
+public abstract class Terminal extends Nodo{
 
     public Terminal (String simbolo){
         super(simbolo);
     }
 
-    public String toString() {
-        return super.getRaiz()+" ";
-    }
+    public abstract String toString();
 
-    public double calcular() {
-        return 1;
-    }
+    public abstract double calcular();
 
     public List<INodo> getDescendientes() {
         return new ArrayList<>();
@@ -25,7 +21,5 @@ public class Terminal extends Nodo{
     public void incluirDescendiente(INodo nodo) {
     }
 
-    public INodo copy() {
-        return new Terminal(this.getRaiz());
-    }
+    public abstract INodo copy();
 }
