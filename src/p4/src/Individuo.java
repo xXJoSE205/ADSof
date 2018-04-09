@@ -31,12 +31,7 @@ public class Individuo implements IIndividuo{
     public int getNumeroNodos() {
         int contador = 1;
 
-        List<INodo> descendientes = raiz.getDescendientes();
-        for (int i = 0; i < descendientes.size(); i++) {
-            contador++;
-        }
-
-        return contador;
+        return raiz.getDescendientes().size();
     }
 
     public void writeIndividuo() {
