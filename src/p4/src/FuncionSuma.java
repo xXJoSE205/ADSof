@@ -6,6 +6,7 @@ public class FuncionSuma extends Funcion {
         super(operador, operandos);
     }
 
+    @Override
     public double calcular() {
         double resultado=0.0;
 
@@ -14,5 +15,14 @@ public class FuncionSuma extends Funcion {
         }
 
         return resultado;
+    }
+
+    @Override
+    public INodo copy() {
+        Funcion funcionCopy = new FuncionSuma(this.getRaiz(), this.getNumOperandos());
+        for(INodo n: getDescendientes()){
+            funcionCopy.incluirDescendiente(n);
+        }
+        return funcionCopy;
     }
 }

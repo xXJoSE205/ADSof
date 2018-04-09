@@ -1,5 +1,8 @@
 package p4.src;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Terminal extends Nodo{
 
     public Terminal (String simbolo){
@@ -11,7 +14,15 @@ public class Terminal extends Nodo{
     }
 
     public double calcular() {
-        return 3;
+        return 1;
+    }
+
+    public List<INodo> getDescendientes() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public void incluirDescendiente(INodo nodo) {
     }
 
     public INodo copy() {

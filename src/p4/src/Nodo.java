@@ -1,6 +1,5 @@
 package p4.src;
 
-
 import java.util.List;
 
 public abstract class Nodo implements INodo{
@@ -8,29 +7,23 @@ public abstract class Nodo implements INodo{
     private String raiz;
     private int id;
     private static int contador = 1;
+    private String simbolo;
 
     public Nodo(String simbolo){
-        this.raiz = simbolo;
+        this.simbolo = simbolo;
     }
 
     public String getRaiz() {
-        return raiz;
+        return simbolo;
     }
 
-    public List<Nodo> getDescendientes() {
-        return null;
-    }
+    public abstract List<INodo> getDescendientes();
 
-    public void incluirDescendiente(INodo nodo) {
-        return;
-    }
+    public abstract void incluirDescendiente(INodo nodo);
 
-    public double calcular() {
+    public abstract double calcular();
 
-
-        return 0;
-    }
-
+    public abstract INodo copy();
     public INodo copy() {
         return null;
     }
