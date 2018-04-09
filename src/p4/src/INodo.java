@@ -8,4 +8,5 @@ public interface INodo {
     void incluirDescendiente(INodo nodo);
     double calcular();
     INodo copy();
+    void etiquetar();
 }

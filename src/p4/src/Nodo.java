@@ -28,16 +28,16 @@ public abstract class Nodo implements INodo{
         return null;
     }
 
-    public void etiquetar(Nodo nodo){
-        if(nodo==null){
-            throw new NullPointerException("El nodo es null");
-        }
+    public void etiquetar(){
 
-        while(!nodo.getDescendientes().isEmpty()){
-            nodo.getDescendientes().get(0).etiquetar(nodo.getDescendientes().get(0));
-            nodo.id=contador;
-            contador = contador + 1;
-            nodo.getDescendientes().get(1).etiquetar(nodo.getDescendientes().get(1));
+
+        while(!getDescendientes().isEmpty()){
+            for(int i=0; i<getDescendientes().size();i++){
+                getDescendientes().get(i).etiquetar();
+                id=contador;
+                contador = contador + 1;
+            }
+
         }
         return;
     }
