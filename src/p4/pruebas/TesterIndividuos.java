@@ -1,8 +1,10 @@
-package p4.src;
+package p4.pruebas;
+
+import p4.src.*;
 
 public class TesterIndividuos {
     public static void main(String[] args) {
-        Terminal x = new Terminal("x");
+        Terminal x = new TerminalAritmetico("x");
         Funcion suma = new FuncionSuma("+", 2);
         Funcion resta = new FuncionResta("-", 2);
         Funcion multi = new FuncionMultiplicacion("*", 2);
