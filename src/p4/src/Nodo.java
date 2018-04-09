@@ -24,12 +24,8 @@ public abstract class Nodo implements INodo{
     public abstract double calcular();
 
     public abstract INodo copy();
-    public INodo copy() {
-        return null;
-    }
 
     public void etiquetar(){
-
 
         while(!getDescendientes().isEmpty()){
             for(int i=0; i<getDescendientes().size();i++){
@@ -39,7 +35,6 @@ public abstract class Nodo implements INodo{
             }
 
         }
-        return;
     }
 
 }
