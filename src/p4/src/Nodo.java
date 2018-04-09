@@ -35,6 +35,7 @@ public abstract class Nodo implements INodo{
                 getDescendientes().get(i).etiquetar();
 
             }
+
             id=contador;
             contador = contador + 1;
         }
