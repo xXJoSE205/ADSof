@@ -24,22 +24,20 @@ public abstract class Nodo implements INodo{
     public abstract double calcular();
 
     public abstract INodo copy();
-    public INodo copy() {
-        return null;
-    }
 
     public void etiquetar(){
-
-
         while(!getDescendientes().isEmpty()){
             for(int i=0; i<getDescendientes().size();i++){
+                if(getDescendientes().size()/2==i){
+                    id=contador;
+                    contador = contador +1;
+                }
                 getDescendientes().get(i).etiquetar();
-                id=contador;
-                contador = contador + 1;
-            }
 
+            }
+            id=contador;
+            contador = contador + 1;
         }
-        return;
     }
 
 }
