@@ -3,20 +3,25 @@ package p4.src;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Funcion extends Nodo{
+public abstract class Funcion extends Nodo{
     private int numOperandos;
-    private List<INodo> listaDescendientes;
+    private List<INodo> descendientes;
 
-    public Funcion (String operador, int operandos){
+    public Funcion(String operador, int operandos){
         super(operador);
-        listaDescendientes = new ArrayList<>();
+        descendientes = new ArrayList<>();
         this.numOperandos = operandos;
     }
 
+    public int getNumOperandos() {
+        return numOperandos;
+    }
+
+    @Override
     public String toString() {
         String cadena = "( " + super.getRaiz();
 
-        for(INodo n : listaDescendientes){
+        for(INodo n : descendientes){
             cadena += n.toString();
         }
         cadena += ") ";
@@ -24,17 +29,23 @@ public class Funcion extends Nodo{
         return cadena;
     }
 
+    @Override
     public void incluirDescendiente(INodo nodo) {
-        listaDescendientes.add(nodo);
+        if(descendientes.size() < numOperandos) {
+            descendientes.add(nodo);
+        }
     }
 
+    @Override
     public List<INodo> getDescendientes() {
-        return listaDescendientes;
+        List<INodo> descen = new ArrayList<>();
+        for(INodo n: descendientes){
+            descen.addAll(n.getDescendientes());
+        }
+        return descen;
     }
 
-    public INodo copy() {
-        Funcion funcionCopy = new Funcion(this.getRaiz(),this.numOperandos);
-        funcionCopy.listaDescendientes = this.getDescendientes();
-        return funcionCopy;
-    }
+    public abstract double calcular();
+
+    public abstract INodo copy();
 }

@@ -4,30 +4,21 @@ import java.util.List;
 
 public abstract class Nodo implements INodo{
 
-    private String raiz;
+    private String simbolo;
 
     public Nodo(String simbolo){
-        this.raiz = simbolo;
+        this.simbolo = simbolo;
     }
 
     public String getRaiz() {
-        return raiz;
+        return simbolo;
     }
 
-    public List<INodo> getDescendientes() {
-        return null;
-    }
+    public abstract List<INodo> getDescendientes();
 
-    public void incluirDescendiente(INodo nodo) {
-        return;
-    }
+    public abstract void incluirDescendiente(INodo nodo);
 
-    public double calcular() {
-        return 0;
-    }
+    public abstract double calcular();
 
-    public INodo copy() {
-        return null;
-    }
-
+    public abstract INodo copy();
 }
