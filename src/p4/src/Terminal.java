@@ -5,6 +5,7 @@ import java.util.List;
 
 public abstract class Terminal extends Nodo{
 
+
     public Terminal (String simbolo){
         super(simbolo);
     }
@@ -22,4 +23,5 @@ public abstract class Terminal extends Nodo{
     }
 
     public abstract INodo copy();
+
 }

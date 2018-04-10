@@ -5,6 +5,7 @@ import java.util.List;
 public class Individuo implements IIndividuo{
 
     private INodo raiz;
+    private double fitness;
 
     public INodo getExpresion() {
         return raiz;
@@ -15,13 +16,15 @@ public class Individuo implements IIndividuo{
     }
 
     public double getFitness() {
-        return 0;
+        return this.fitness;
     }
 
     public void setFitness(double fitness) {
+        this.fitness=fitness;
     }
 
     public void crearIndividuoAleatorio(int profundidad, List<Terminal> terminales, List<Funcion> funciones) {
+
     }
 
     public double calcularExpresion() {
