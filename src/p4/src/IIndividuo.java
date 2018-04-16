@@ -11,4 +11,6 @@ public interface IIndividuo {
     double calcularExpresion();
     int getNumeroNodos();
     void writeIndividuo();
+    IIndividuo cruza(INodo nodo, int id);
+    void etiquetaNodos();
 }

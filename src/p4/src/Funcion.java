@@ -39,10 +39,19 @@ public abstract class Funcion extends Nodo{
     @Override
     public List<INodo> getDescendientes() {
         List<INodo> descen = new ArrayList<>();
-        for(INodo n: descendientes){
-            descen.addAll(n.getDescendientes());
+        descen.add(this);
+        descen.addAll(descendientes);
+        for(INodo nodo: descendientes){
+            descen.addAll(nodo.getDescendientes());
         }
         return descen;
+    }
+
+    public void setDescendientes(List<INodo> descendientes) {
+        if(descendientes==null){
+            throw new NullPointerException("Los descendientes son NULL");
+        }
+        this.descendientes=descendientes;
     }
 
     public abstract double calcular();

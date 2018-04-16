@@ -25,4 +25,5 @@ public class FuncionSuma extends Funcion {
         }
         return funcionCopy;
     }
+
 }

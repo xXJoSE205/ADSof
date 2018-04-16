@@ -29,4 +29,5 @@ public class FuncionResta extends Funcion {
         }
         return funcionCopy;
     }
+
 }

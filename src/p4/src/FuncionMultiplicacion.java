@@ -25,4 +25,6 @@ public class FuncionMultiplicacion extends Funcion {
         }
         return funcionCopy;
     }
+
+
 }
