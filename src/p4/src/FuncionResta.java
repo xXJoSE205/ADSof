@@ -8,7 +8,7 @@ public class FuncionResta extends Funcion {
 
     @Override
     public double calcular() {
-        double resultado = 0.0;
+        double resultado = 0;
 
         for(int i=0; i<super.getDescendientes().size(); i++){
             if(i==0){

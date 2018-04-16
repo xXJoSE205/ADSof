@@ -8,7 +8,7 @@ public class FuncionSuma extends Funcion {
 
     @Override
     public double calcular() {
-        double resultado=0.0;
+        double resultado = 0;
 
         for(INodo n : super.getDescendientes()){
             resultado += n.calcular();

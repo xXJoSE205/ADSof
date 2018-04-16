@@ -1,6 +1,5 @@
 package p4.src;
 
-import javax.print.attribute.standard.NumberUp;
 import java.util.List;
 
 public class Individuo implements IIndividuo{
