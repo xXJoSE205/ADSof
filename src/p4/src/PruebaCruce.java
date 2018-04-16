@@ -3,7 +3,15 @@ package p4.src;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class PruebaCruce {
+    /**
+     * Metodo que realiza el cruce entre 2 individuos
+     * @param i1 Individuo numero 1 del cruce
+     * @param i2 Individuo numero 2 del cruce
+     * @return List, lista con los 2 nuevos individuos resultantes del cruce
+     * @throws CruceNuloException Si los numeros aleatorios son iguales a 1 o iguales entre ellos
+     */
     public List cruce(IIndividuo i1, IIndividuo i2) throws CruceNuloException {
         List<IIndividuo> lista = new ArrayList<>();
         INodo nodo;

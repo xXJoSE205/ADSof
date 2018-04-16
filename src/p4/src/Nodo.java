@@ -93,11 +93,13 @@ public abstract class Nodo implements INodo{
     }
 
     /**
-     *
-     * @param nodo
-     * @param id
+     * Si encuentra el nodo, cambia sus descendientes por el nodo dado
+     * @param nodo nodo para cambiar
+     * @param id ID del nodo donde realizar el cruce
+     * @throws IllegalArgumentException Si el id es menor que 1
+     * @throws NullPointerException Si el nodo es null
      */
-    public void cruzar(INodo nodo, int id){
+    public void cruzar(INodo nodo, int id) throws NullPointerException, IllegalArgumentException{
         if(nodo==null){
             throw new NullPointerException("El nodo es null");
         }
@@ -133,5 +135,4 @@ public abstract class Nodo implements INodo{
 
     }
 
-    public abstract List<INodo> getDesNodo();
 }

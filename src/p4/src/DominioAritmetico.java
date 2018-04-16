@@ -11,21 +11,39 @@ import java.util.StringTokenizer;
 import java.util.TreeMap;
 
 public class DominioAritmetico implements IDominio {
+    /** Arbol con los operandos*/
     private TreeMap<Double, Double> numeros;
 
+    /** Constructor de DominioAritmetico*/
     public DominioAritmetico() {
         this.numeros = new TreeMap<>();
     }
 
+    /**
+     *
+     * @param terminales
+     * @return
+     */
     public List<Terminal> definirConjuntoTerminales(String... terminales) {
         return null;
     }
 
+    /**
+     *
+     * @param argumentos
+     * @param funciones
+     * @return
+     * @throws ArgsDistintosFuncionesException
+     */
     public List<Funcion> definirConjuntoFunciones(int[] argumentos, String... funciones)
             throws ArgsDistintosFuncionesException {
         return null;
     }
 
+    /**
+     *
+     * @param ficheroDatos
+     */
     public void definirValoresPrueba(String ficheroDatos){
         try {
             BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(ficheroDatos)));
@@ -40,6 +58,11 @@ public class DominioAritmetico implements IDominio {
         }
     }
 
+    /**
+     * Calcula el fitness de un individuo
+     * @param individuo individuo del que se quiere calcular el fitness
+     * @return double, el fitness del individuo
+     */
     public double calcularFitness(IIndividuo individuo) {
         double fitness=0;
         for(double x : numeros.keySet()){

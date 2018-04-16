@@ -105,7 +105,4 @@ public abstract class Funcion extends Nodo{
      */
     public abstract INodo copy();
 
-    public List<INodo> getDesNodo(){
-        return descendientes;
-    }
 }
