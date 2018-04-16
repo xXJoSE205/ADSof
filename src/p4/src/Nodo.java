@@ -12,6 +12,7 @@ public abstract class Nodo implements INodo{
     private String simbolo;
     /** ID del nodo*/
     private int id;
+    private static int contador = 1;
 
     /**
      * Constructor de Nodo
@@ -124,10 +125,13 @@ public abstract class Nodo implements INodo{
      * Establece un ID a cada nodo por orden de profundidad
      */
     public void etiquetar() {
-        int i=1;
-        for(INodo nodo :getDescendientes()){
-            nodo.setId(i);
-            i++;
+        setId(contador);
+        contador++;
+        for(INodo nodo : getDescendientes()){
+            nodo.etiquetar();
         }
+
     }
+
+    public abstract List<INodo> getDesNodo();
 }
