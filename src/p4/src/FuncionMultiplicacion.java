@@ -1,12 +1,11 @@
 /**
- * Esta clase contiene la la informacion de una FuncionMultiplicacion
+ * Esta clase contiene la informacion de una FuncionMultiplicacion
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
 package p4.src;
 
 public class FuncionMultiplicacion extends Funcion {
-
     /**
      * Constructor de FuncionMultiplicacion
      *
@@ -34,8 +33,9 @@ public class FuncionMultiplicacion extends Funcion {
     }
 
     /**
+     * Crea una copia de la FuncionMultiplicacion
      *
-     * @return
+     * @return Nodo nuevo con la misma informacion
      */
     @Override
     public INodo copy() {
@@ -45,6 +45,4 @@ public class FuncionMultiplicacion extends Funcion {
         }
         return funcionCopy;
     }
-
-
 }

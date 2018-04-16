@@ -26,8 +26,6 @@ public abstract class Nodo implements INodo{
 
     public abstract void setDescendientes(List<INodo> descendientes);
 
-
-
     public int getId(){
         return id;
     }

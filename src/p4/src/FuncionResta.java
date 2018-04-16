@@ -1,11 +1,26 @@
+/**
+ * Esta clase contiene la informacion de una FuncionResta
+ *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
+ */
 package p4.src;
 
 public class FuncionResta extends Funcion {
-
+    /**
+     * Constructor de FuncionResta
+     *
+     * @param operador Simbolo representativo de la funcion
+     * @param operandos Numero de operandos de la funcion
+     */
     public FuncionResta(String operador, int operandos) {
         super(operador, operandos);
     }
 
+    /**
+     * Devuelve el resultado de restar los descendientes
+     *
+     * @return double, resta de los descendientes
+     */
     @Override
     public double calcular() {
         double resultado = 0;
@@ -21,6 +36,11 @@ public class FuncionResta extends Funcion {
         return resultado;
     }
 
+    /**
+     * Crea una copia de la FuncionResta
+     *
+     * @return Nodo nuevo con la misma informacion
+     */
     @Override
     public INodo copy() {
         Funcion funcionCopy = new FuncionResta(this.getRaiz(), this.getNumOperandos());
@@ -29,5 +49,4 @@ public class FuncionResta extends Funcion {
         }
         return funcionCopy;
     }
-
 }

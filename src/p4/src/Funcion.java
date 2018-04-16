@@ -1,5 +1,5 @@
 /**
- * Esta clase contiene la la informacion de una Funcion
+ * Esta clase contiene la informacion de una Funcion
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
@@ -77,6 +77,7 @@ public abstract class Funcion extends Nodo{
     public List<INodo> getDescendientes() {
         List<INodo> descen = new ArrayList<>();
         for(INodo nodo: descendientes){
+            descen.add(nodo);
             descen.addAll(nodo.getDescendientes());
         }
         return descen;
