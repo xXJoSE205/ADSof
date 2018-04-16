@@ -19,4 +19,5 @@ public interface INodo {
     void setDescendientes(List<INodo> descendientes);
     void setId(int id);
     void etiquetar();
+    List<INodo> getDesNodo();
 }
