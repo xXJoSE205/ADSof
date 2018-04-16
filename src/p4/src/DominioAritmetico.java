@@ -43,6 +43,7 @@ public class DominioAritmetico implements IDominio {
     public double calcularFitness(IIndividuo individuo) {
         double fitness=0;
         for(double x : numeros.keySet()){
+            Terminal.setValor(x);
             double y = individuo.calcularExpresion();
             System.out.println("Valor "+ x + " <->  Rdo estimado: "+ y + " <-> Rdo real: " + numeros.get(x) );
             if(numeros.get(x)==y || numeros.get(x)== y+1 || numeros.get(x)==y-1){

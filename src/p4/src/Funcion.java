@@ -75,12 +75,7 @@ public abstract class Funcion extends Nodo{
      */
     @Override
     public List<INodo> getDescendientes() {
-        List<INodo> descen = new ArrayList<>();
-        for(INodo nodo: descendientes){
-            descen.add(nodo);
-            descen.addAll(nodo.getDescendientes());
-        }
-        return descen;
+        return descendientes;
     }
 
     /**

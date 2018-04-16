@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class TesterLecturaYFitness {
 
-    public static void main(String[] args) throws IOException, IOException {
+    public static void main(String[] args) throws IOException {
         IDominio domAritm;
         double fitness;
 

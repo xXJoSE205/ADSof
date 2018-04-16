@@ -1,6 +1,5 @@
 package p4.src;
 
-import java.util.List;
 
 public class TerminalAritmetico extends Terminal{
 
@@ -14,18 +13,7 @@ public class TerminalAritmetico extends Terminal{
     }
 
     @Override
-    public double calcular() {
-        return 0;
-    }
-
-    @Override
     public INodo copy() {
         return new TerminalAritmetico(getRaiz());
     }
-
-    @Override
-    public void setDescendientes(List<INodo> descendientes) {
-
-    }
-
 }

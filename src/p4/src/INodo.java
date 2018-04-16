@@ -1,3 +1,8 @@
+/**
+ * Esta clase contiene la informacion de la interfaz INodo
+ *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
+ */
 package p4.src;
 
 import java.util.List;
