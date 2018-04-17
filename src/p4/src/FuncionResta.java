@@ -1,10 +1,10 @@
+package p4.src;
+
 /**
  * Esta clase contiene la informacion de una FuncionResta
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-package p4.src;
-
 public class FuncionResta extends Funcion {
     /**
      * Constructor de FuncionResta
@@ -44,8 +44,7 @@ public class FuncionResta extends Funcion {
     @Override
     public INodo copy() {
         if(getRaiz().equals("x")){
-            INodo nodo= new TerminalAritmetico("x");
-            return nodo;
+            return new TerminalAritmetico("x");
         }
         Funcion funcionCopy = new FuncionResta(this.getRaiz(), this.getNumOperandos());
         for(INodo n: getDescendientes()){

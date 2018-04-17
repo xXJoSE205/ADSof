@@ -3,8 +3,12 @@ package p4.src;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Esta clase contiene la informacio  de un Terminal
+ *
+ * @author Jorge Mateo Segura y Jose Antonio Muñoz Ortega
+ */
 public abstract class Terminal extends Nodo{
-
     /** Valor numerico de la expresion*/
     private static double valor;
 
@@ -60,8 +64,7 @@ public abstract class Terminal extends Nodo{
      */
 
     public INodo copy(){
-        INodo nodo = new TerminalAritmetico(getRaiz());
-        return nodo;
+        return new TerminalAritmetico(getRaiz());
     }
 
     /**

@@ -1,10 +1,10 @@
+package p4.src;
+
 /**
  * Esta clase contiene la informacion de una FuncionSuma
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-package p4.src;
-
 public class FuncionSuma extends Funcion {
     /**
      * Constructor de FuncionSuma
@@ -40,8 +40,7 @@ public class FuncionSuma extends Funcion {
     @Override
     public INodo copy() {
         if(getRaiz().equals("x")){
-            INodo nodo= new TerminalAritmetico("x");
-            return nodo;
+            return new TerminalAritmetico("x");
         }
         Funcion funcionCopy = new FuncionSuma(this.getRaiz(), this.getNumOperandos());
         for(INodo n: getDescendientes()){

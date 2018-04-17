@@ -1,13 +1,13 @@
-/**
- * Esta clase contiene la informacion de un Individuo
- *
- * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
- */
 package p4.src;
 
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Esta clase contiene la informacion de un Individuo
+ *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
+ */
 public class Individuo implements IIndividuo{
     /** Raiz del arbol de nodos*/
     private INodo raiz;
@@ -86,7 +86,7 @@ public class Individuo implements IIndividuo{
         int x=1;
 
         for(INodo nodos: getExpresion().getDescendientes()){
-            x+=nodos.getNnodos();
+            x+=nodos.getNNodos();
         }
         this.nNodos=x;
     }

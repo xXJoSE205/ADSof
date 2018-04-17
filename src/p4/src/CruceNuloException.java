@@ -1,10 +1,10 @@
+package p4.src;
+
 /**
  * Esta clase contiene la excepcion CruceNuloException
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-package p4.src;
-
 public class CruceNuloException extends Exception {
     /**
      * Constructor de la excepcion

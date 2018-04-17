@@ -3,7 +3,11 @@ package p4.src;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Esta clase contiene la informacion de una PruebaCruce
+ *
+ * @author Jorge Mateo Segura y Jose Antonio Muñoz Ortega
+ */
 public class PruebaCruce {
     /**
      * Metodo que realiza el cruce entre 2 individuos
@@ -14,7 +18,7 @@ public class PruebaCruce {
      */
     public List cruce(IIndividuo i1, IIndividuo i2) throws CruceNuloException {
         List<IIndividuo> lista = new ArrayList<>();
-        INodo nodo;
+
         int x= (int) Math.floor(Math.random()*i1.getNumeroNodos()+1);
         int y= (int) Math.floor(Math.random()*i2.getNumeroNodos()+1);
         if( y==x || x==1 || y==1){
@@ -34,5 +38,4 @@ public class PruebaCruce {
         lista.add(i2);
         return lista;
     }
-
 }

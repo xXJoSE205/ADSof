@@ -1,10 +1,10 @@
+package p4.src;
+
 /**
  * Esta clase contiene la informacion de una FuncionMultiplicacion
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-package p4.src;
-
 public class FuncionMultiplicacion extends Funcion {
     /**
      * Constructor de FuncionMultiplicacion
@@ -40,8 +40,7 @@ public class FuncionMultiplicacion extends Funcion {
     @Override
     public INodo copy() {
         if(getRaiz().equals("x")){
-            INodo nodo= new TerminalAritmetico("x");
-            return nodo;
+            return new TerminalAritmetico("x");
         }
         Funcion funcionCopy = new FuncionMultiplicacion(this.getRaiz(), this.getNumOperandos());
         for(INodo n: getDescendientes()){
