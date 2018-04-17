@@ -125,6 +125,10 @@ public abstract class Nodo implements INodo{
         return n2.etiquetar(n1.etiquetar(x+1,etiqueta),etiqueta);
     }
 
+    /**
+     * Obtiene el numero de descendientes del nodo
+     * @return int, numero de descendientes
+     */
     public int getNNodos(){
         int x=0;
         if(getRaiz().equals("x")){
@@ -138,6 +142,11 @@ public abstract class Nodo implements INodo{
         return x;
     }
 
+    /**
+     * Busca el nodo con el ID asignado
+     * @param id ID del nodo que se esta buscando
+     * @return nodo en caso de que se encuentre el nodo, null en caso contrario
+     */
     @Override
     public INodo buscar(int id) {
         for(INodo n: getDescendientes()){
