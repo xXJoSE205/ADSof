@@ -5,7 +5,6 @@ package p4.src;
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-
 public class ArgsDistintosFuncionesException extends Exception{
     /**
      * Constructor de la excepcion
