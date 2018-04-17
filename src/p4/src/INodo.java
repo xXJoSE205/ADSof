@@ -22,4 +22,5 @@ public interface INodo {
     int getNNodos();
     void borrarDescendiente(int x);
     void anadirDescendiente(INodo nodo, int x);
+    INodo buscar(int id);
 }
