@@ -62,7 +62,6 @@ public abstract class Terminal extends Nodo{
      * Definicion del metodo copy
      * @return INodo, nodo copiado
      */
-
     public INodo copy(){
         return new TerminalAritmetico(getRaiz());
     }
