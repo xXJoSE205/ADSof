@@ -27,6 +27,11 @@ public class DominioAritmetico implements IDominio {
         return null;
     }
 
+    /**
+     * Establece los valores con los que se va ha realizar la expresion
+     *
+     * @param ficheroDatos fichero que contiene los valores de la prueba
+     */
     public void definirValoresPrueba(String ficheroDatos){
         try {
             BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(ficheroDatos)));
