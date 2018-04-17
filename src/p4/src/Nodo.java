@@ -19,7 +19,7 @@ public abstract class Nodo implements INodo{
      *
      * @param simbolo Simbolo caracteristico del nodo
      */
-    public Nodo(String simbolo){
+    Nodo(String simbolo){
         this.simbolo = simbolo;
     }
 
@@ -72,7 +72,6 @@ public abstract class Nodo implements INodo{
         return id;
     }
 
-
     /**
      * Si encuentra el nodo, cambia sus descendientes por el nodo dado
      * @param nodo nodo para cambiar
@@ -99,8 +98,6 @@ public abstract class Nodo implements INodo{
                     }
                 }
             }
-        } else {
-            return;
         }
     }
 
@@ -140,5 +137,4 @@ public abstract class Nodo implements INodo{
         }
         return x;
     }
-
 }

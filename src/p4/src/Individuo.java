@@ -14,7 +14,7 @@ public class Individuo implements IIndividuo{
     /** Fitness*/
     private double fitness;
     /** Numero de nodos en el individuo*/
-    private int Nnodos=-1;
+    private int nNodos=-1;
 
     private HashMap<Integer,INodo>ids= new HashMap<>();
 
@@ -73,10 +73,10 @@ public class Individuo implements IIndividuo{
      * @return entero, numero de nodos
      */
     public int getNumeroNodos() {
-        if(Nnodos==-1){
+        if(nNodos==-1){
             setNnodos();
         }
-        return this.Nnodos;
+        return this.nNodos;
     }
 
     /**
@@ -88,7 +88,7 @@ public class Individuo implements IIndividuo{
         for(INodo nodos: getExpresion().getDescendientes()){
             x+=nodos.getNnodos();
         }
-        this.Nnodos=x;
+        this.nNodos=x;
     }
 
     /**

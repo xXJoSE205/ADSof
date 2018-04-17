@@ -15,6 +15,7 @@ public interface INodo {
     double calcular();
     INodo copy();
     int getId();
+    INodo buscar( int id);
     void cruzar(INodo nodo, int id);
     void setDescendientes(List<INodo> descendientes);
     void setId(int id);
