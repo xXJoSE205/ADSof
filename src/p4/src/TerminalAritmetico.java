@@ -40,5 +40,24 @@ public class TerminalAritmetico extends Terminal{
 
     }
 
+    /**
+     * Borra el descendiente de la posicion x
+     * @param x posicion de la lista que se quiere eliminar
+     */
+    @Override
+    public void borrarDescendiente(int x) {
+
+    }
+
+    /**
+     * Añade un descendiente a la posicion x
+     * @param nodo nodo que se quiere añadir como descendiente
+     * @param x posicion de la lista donde se quiere añadir el nodo
+     */
+    @Override
+    public void anadirDescendiente(INodo nodo, int x) {
+
+    }
+
 
 }

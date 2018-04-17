@@ -39,6 +39,10 @@ public class FuncionMultiplicacion extends Funcion {
      */
     @Override
     public INodo copy() {
+        if(getRaiz().equals("x")){
+            INodo nodo= new TerminalAritmetico("x");
+            return nodo;
+        }
         Funcion funcionCopy = new FuncionMultiplicacion(this.getRaiz(), this.getNumOperandos());
         for(INodo n: getDescendientes()){
             funcionCopy.incluirDescendiente(n);

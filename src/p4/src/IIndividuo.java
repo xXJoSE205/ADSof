@@ -18,4 +18,5 @@ public interface IIndividuo {
     void writeIndividuo();
     IIndividuo cruza(INodo nodo, int id);
     void etiquetaNodos();
+    INodo buscar(int id);
 }

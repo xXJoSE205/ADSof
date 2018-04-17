@@ -105,4 +105,26 @@ public abstract class Funcion extends Nodo{
      */
     public abstract INodo copy();
 
+    /**
+     * Devuelve el numero de descendientes que tiene el nodo
+     * @return int, numero de descendientes
+     */
+    @Override
+    public int getNnodos() {
+        int x=1;
+        List<INodo> aux=getDescendientes();
+        for(int i=0;i<aux.size();i++) {
+            x+=aux.get(i).getNnodos();
+        }
+        return x;
+    }
+
+    public void borrarDescendiente(int x){
+        descendientes.remove(x);
+    }
+
+    public void anadirDescendiente(INodo nodo, int x){
+        INodo n=nodo.copy();
+        descendientes.add(x,n);
+    }
 }

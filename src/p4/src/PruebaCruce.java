@@ -15,15 +15,17 @@ public class PruebaCruce {
     public List cruce(IIndividuo i1, IIndividuo i2) throws CruceNuloException {
         List<IIndividuo> lista = new ArrayList<>();
         INodo nodo;
-        int x= (int) (Math.random()*i1.getNumeroNodos());
-        int y= (int) (Math.random()*i2.getNumeroNodos());
+        int x= (int) Math.floor(Math.random()*i1.getNumeroNodos()+1);
+        int y= (int) Math.floor(Math.random()*i2.getNumeroNodos()+1);
         if( y==x || x==1 || y==1){
             throw new CruceNuloException("Los 2 numeros son 1");
         }
-        nodo=i1.getExpresion();
-        INodo busqueda1=nodo.buscar(x);
-        nodo=i2.getExpresion();
-        INodo busqueda2=nodo.buscar(y);
+
+        System.out.println("Punto de cruce del progenitor 1: "+x);
+        System.out.println("Punto de cruce del progenitor 2: "+y);
+
+        INodo busqueda1=i1.buscar(x);
+        INodo busqueda2=i2.buscar(y);
 
         i1.cruza(busqueda2,x);
         i2.cruza(busqueda1,y);

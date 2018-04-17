@@ -5,6 +5,7 @@
  */
 package p4.src;
 
+import java.util.HashMap;
 import java.util.List;
 
 public abstract class Nodo implements INodo{
@@ -12,7 +13,6 @@ public abstract class Nodo implements INodo{
     private String simbolo;
     /** ID del nodo*/
     private int id;
-    private static int contador = 1;
 
     /**
      * Constructor de Nodo
@@ -72,25 +72,6 @@ public abstract class Nodo implements INodo{
         return id;
     }
 
-    /**
-     * Devuelve el nodo con el ID indicado
-     *
-     * @param id ID del nodo a buscar
-     * @return INodo, nodo con el correspondiente ID
-     * @throws IllegalArgumentException Si el id es menor que 1
-     */
-    public INodo buscar(int id) throws IllegalArgumentException{
-        if(id<1){
-            throw new IllegalArgumentException("El id es menor que 1");
-        }
-        List<INodo> aux=getDescendientes();
-        for(INodo nodo:aux){
-            if(nodo.getId()==id){
-                return nodo;
-            }
-        }
-        return null;
-    }
 
     /**
      * Si encuentra el nodo, cambia sus descendientes por el nodo dado
@@ -106,11 +87,20 @@ public abstract class Nodo implements INodo{
         if(id<1){
             throw new IllegalArgumentException("El id es menor que 1");
         }
-        for(int i=0; i<getDescendientes().size();i++){
-            if(getDescendientes().get(i).getId()==id){
-                setDescendientes(nodo.getDescendientes());
-                return;
+        if(!getRaiz().equals("x")) {
+            for (int i = 0; i < getDescendientes().size(); i++) {
+                if (getDescendientes().get(i).getId() == id) {
+                    borrarDescendiente(i);
+                    anadirDescendiente(nodo,i);
+                    return;
+                } else {
+                    for(int j=0; i< getDescendientes().size();i++){
+                        getDescendientes().get(i).cruzar(nodo, id);
+                    }
+                }
             }
+        } else {
+            return;
         }
     }
 
@@ -126,13 +116,29 @@ public abstract class Nodo implements INodo{
     /**
      * Establece un ID a cada nodo por orden de profundidad
      */
-    public void etiquetar() {
-        setId(contador);
-        contador++;
-        for(INodo nodo : getDescendientes()){
-            nodo.etiquetar();
+    public int etiquetar(int x, HashMap<Integer,INodo> etiqueta) {
+        this.id=x;
+        etiqueta.put(x,this);
+        if(getRaiz().equals("x")){
+            return x+1;
         }
 
+        INodo n1=getDescendientes().get(0);
+        INodo n2=getDescendientes().get(1);
+        return n2.etiquetar(n1.etiquetar(x+1,etiqueta),etiqueta);
+    }
+
+    public int getNnodos(){
+        int x=0;
+        if(getRaiz().equals("x")){
+            return 1;
+        }
+        x++;
+        List<INodo> aux=getDescendientes();
+        for(int i=0;i<aux.size();i++) {
+            x += aux.get(i).getNnodos();
+        }
+        return x;
     }
 
 }

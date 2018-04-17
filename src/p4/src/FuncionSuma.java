@@ -39,6 +39,10 @@ public class FuncionSuma extends Funcion {
      */
     @Override
     public INodo copy() {
+        if(getRaiz().equals("x")){
+            INodo nodo= new TerminalAritmetico("x");
+            return nodo;
+        }
         Funcion funcionCopy = new FuncionSuma(this.getRaiz(), this.getNumOperandos());
         for(INodo n: getDescendientes()){
             funcionCopy.incluirDescendiente(n);

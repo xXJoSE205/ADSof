@@ -5,6 +5,7 @@
  */
 package p4.src;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Individuo implements IIndividuo{
@@ -14,6 +15,8 @@ public class Individuo implements IIndividuo{
     private double fitness;
     /** Numero de nodos en el individuo*/
     private int Nnodos=-1;
+
+    private HashMap<Integer,INodo>ids= new HashMap<>();
 
     /**
      * Obtiene la expresion, raiz, del individup
@@ -80,7 +83,12 @@ public class Individuo implements IIndividuo{
      * Estable el numero de nodos del individuo como el tamaño de la lista de descendientes
      */
     public void setNnodos(){
-        this.Nnodos=getExpresion().getDescendientes().size();
+        int x=1;
+
+        for(INodo nodos: getExpresion().getDescendientes()){
+            x+=nodos.getNnodos();
+        }
+        this.Nnodos=x;
     }
 
     /**
@@ -104,16 +112,29 @@ public class Individuo implements IIndividuo{
         if(id<1){
             throw new IllegalArgumentException("El id es menor que 1");
         }
-        IIndividuo nuevo= new Individuo();
-        nuevo.setExpresion(getExpresion().copy());
-        nuevo.getExpresion().cruzar(nodo, id);
-        return nuevo;
+        getExpresion().cruzar(nodo,id);
+        return this;
     }
 
     /**
      * Establece un ID a todos los nodos por orden de profundidad
      */
     public void etiquetaNodos(){
-        getExpresion().etiquetar();
+        raiz.etiquetar(1,ids);
+    }
+
+
+    /**
+     * Devuelve el nodo con el ID indicado
+     *
+     * @param id ID del nodo a buscar
+     * @return INodo, nodo con el correspondiente ID
+     * @throws IllegalArgumentException Si el id es menor que 1
+     */
+    public INodo buscar(int id) throws IllegalArgumentException{
+        if(id<1){
+            throw new IllegalArgumentException("El id es menor que 1");
+        }
+        return ids.get(id);
     }
 }

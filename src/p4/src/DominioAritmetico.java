@@ -19,31 +19,15 @@ public class DominioAritmetico implements IDominio {
         this.numeros = new TreeMap<>();
     }
 
-    /**
-     *
-     * @param terminales
-     * @return
-     */
     public List<Terminal> definirConjuntoTerminales(String... terminales) {
         return null;
     }
 
-    /**
-     *
-     * @param argumentos
-     * @param funciones
-     * @return
-     * @throws ArgsDistintosFuncionesException
-     */
     public List<Funcion> definirConjuntoFunciones(int[] argumentos, String... funciones)
             throws ArgsDistintosFuncionesException {
         return null;
     }
 
-    /**
-     *
-     * @param ficheroDatos
-     */
     public void definirValoresPrueba(String ficheroDatos){
         try {
             BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(ficheroDatos)));
