@@ -1,13 +1,12 @@
+package p4.src;
+
+import java.util.HashMap;
+import java.util.List;
 /**
  * Esta clase contiene la informacion de un Individuo
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-package p4.src;
-
-import java.util.HashMap;
-import java.util.List;
-
 public class Individuo implements IIndividuo{
     /** Raiz del arbol de nodos*/
     private INodo raiz;
@@ -15,7 +14,7 @@ public class Individuo implements IIndividuo{
     private double fitness;
     /** Numero de nodos en el individuo*/
     private int Nnodos=-1;
-
+    /**HashMap con los etiquetados*/
     private HashMap<Integer,INodo>ids= new HashMap<>();
 
     /**
@@ -103,9 +102,8 @@ public class Individuo implements IIndividuo{
      *
      * @param nodo Nodo a cruzar
      * @param id ID del nodo donde hay que realizar el cruce
-     * @return IIndividuo resultante del cruce
      */
-    public IIndividuo cruza(INodo nodo, int id){
+    public void cruza(INodo nodo, int id){
         if(nodo==null){
             throw new NullPointerException("El nodo es null");
         }
@@ -113,7 +111,6 @@ public class Individuo implements IIndividuo{
             throw new IllegalArgumentException("El id es menor que 1");
         }
         getExpresion().cruzar(nodo,id);
-        return this;
     }
 
     /**

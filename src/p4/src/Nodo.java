@@ -1,13 +1,13 @@
+
+package p4.src;
+
+import java.util.HashMap;
+import java.util.List;
 /**
  * Esta clase contiene la informacion de un Nodo
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-package p4.src;
-
-import java.util.HashMap;
-import java.util.List;
-
 public abstract class Nodo implements INodo{
     /** Raiz, simbolo caracteristico*/
     private String simbolo;
@@ -94,13 +94,11 @@ public abstract class Nodo implements INodo{
                     anadirDescendiente(nodo,i);
                     return;
                 } else {
-                    for(int j=0; i< getDescendientes().size();i++){
+                    for(int j=0; j< getDescendientes().size();j++){
                         getDescendientes().get(i).cruzar(nodo, id);
                     }
                 }
             }
-        } else {
-            return;
         }
     }
 
@@ -128,6 +126,10 @@ public abstract class Nodo implements INodo{
         return n2.etiquetar(n1.etiquetar(x+1,etiqueta),etiqueta);
     }
 
+    /**
+     * Obtiene el numero total de descendientes
+     * @return int, numero de nodos del descendiente
+     */
     public int getNnodos(){
         int x=0;
         if(getRaiz().equals("x")){
@@ -135,8 +137,8 @@ public abstract class Nodo implements INodo{
         }
         x++;
         List<INodo> aux=getDescendientes();
-        for(int i=0;i<aux.size();i++) {
-            x += aux.get(i).getNnodos();
+        for (INodo anAux : aux) {
+            x += anAux.getNnodos();
         }
         return x;
     }

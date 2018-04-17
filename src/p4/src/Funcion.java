@@ -1,12 +1,12 @@
+package p4.src;
+
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Esta clase contiene la informacion de una Funcion
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-package p4.src;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class Funcion extends Nodo{
     /** Numero de operandos*/
@@ -113,16 +113,25 @@ public abstract class Funcion extends Nodo{
     public int getNnodos() {
         int x=1;
         List<INodo> aux=getDescendientes();
-        for(int i=0;i<aux.size();i++) {
-            x+=aux.get(i).getNnodos();
+        for (INodo anAux : aux) {
+            x += anAux.getNnodos();
         }
         return x;
     }
 
+    /**
+     * Borra un descendiente en la posicion indicada de la lista
+     * @param x posicion de la lista que se quiere eliminar
+     */
     public void borrarDescendiente(int x){
         descendientes.remove(x);
     }
 
+    /**
+     * Añade un descendiente a la posicion indicada de la lista
+     * @param nodo nodo que se quiere añadir a la lista
+     * @param x posicion de la lista que se quiere añadir
+     */
     public void anadirDescendiente(INodo nodo, int x){
         INodo n=nodo.copy();
         descendientes.add(x,n);

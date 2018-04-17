@@ -1,8 +1,12 @@
 package p4.src;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Esta clase contiene la informacion de un TerminalAritmetico
+ *
+ * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
+ */
 public class TerminalAritmetico extends Terminal{
 
     /**

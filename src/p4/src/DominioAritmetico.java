@@ -1,15 +1,13 @@
+package p4.src;
+
+import java.io.*;
+import java.util.List;
+import java.util.TreeMap;
 /**
  * Esta clase contiene la informacion de un DominioAritmetico
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-package p4.src;
-
-import java.io.*;
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
-
 public class DominioAritmetico implements IDominio {
     /** Arbol con los operandos*/
     private TreeMap<Double, Double> numeros;
@@ -23,8 +21,7 @@ public class DominioAritmetico implements IDominio {
         return null;
     }
 
-    public List<Funcion> definirConjuntoFunciones(int[] argumentos, String... funciones)
-            throws ArgsDistintosFuncionesException {
+    public List<Funcion> definirConjuntoFunciones(int[] argumentos, String... funciones) {
         return null;
     }
 

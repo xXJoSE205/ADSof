@@ -8,7 +8,7 @@ import java.util.List;
 public class TesterCruce {
     public static void main(String[] args) {
         PruebaCruce prueba = new PruebaCruce();
-        List<IIndividuo> descendientes = new ArrayList<IIndividuo>();
+        List<IIndividuo> descendientes = new ArrayList<>();
         Terminal x = new TerminalAritmetico("x");
         Funcion suma = new FuncionSuma("+", 2);
         Funcion resta = new FuncionResta("-", 2);
