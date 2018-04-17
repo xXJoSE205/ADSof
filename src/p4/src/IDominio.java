@@ -1,8 +1,8 @@
-
 package p4.src;
 
 import java.io.*;
 import java.util.List;
+
 /**
  * Esta clase contiene la informacion de la interfaz IDominio
  *

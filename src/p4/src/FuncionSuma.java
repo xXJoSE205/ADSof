@@ -1,10 +1,11 @@
-
 package p4.src;
+
 /**
  * Esta clase contiene la informacion de una FuncionSuma
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
+
 public class FuncionSuma extends Funcion {
     /**
      * Constructor de FuncionSuma

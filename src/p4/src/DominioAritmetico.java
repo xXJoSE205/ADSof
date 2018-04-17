@@ -3,6 +3,7 @@ package p4.src;
 import java.io.*;
 import java.util.List;
 import java.util.TreeMap;
+
 /**
  * Esta clase contiene la informacion de un DominioAritmetico
  *
@@ -21,7 +22,8 @@ public class DominioAritmetico implements IDominio {
         return null;
     }
 
-    public List<Funcion> definirConjuntoFunciones(int[] argumentos, String... funciones) {
+    public List<Funcion> definirConjuntoFunciones(int[] argumentos, String... funciones)
+            throws ArgsDistintosFuncionesException {
         return null;
     }
 

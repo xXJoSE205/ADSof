@@ -1,5 +1,5 @@
-
 package p4.src;
+
 /**
  * Esta clase contiene la informacion de una FuncionResta
  *

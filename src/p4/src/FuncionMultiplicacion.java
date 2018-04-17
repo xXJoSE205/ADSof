@@ -1,10 +1,10 @@
 package p4.src;
+
 /**
  * Esta clase contiene la informacion de una FuncionMultiplicacion
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-
 public class FuncionMultiplicacion extends Funcion {
     /**
      * Constructor de FuncionMultiplicacion

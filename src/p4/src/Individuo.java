@@ -2,6 +2,7 @@ package p4.src;
 
 import java.util.HashMap;
 import java.util.List;
+
 /**
  * Esta clase contiene la informacion de un Individuo
  *
@@ -13,8 +14,8 @@ public class Individuo implements IIndividuo{
     /** Fitness*/
     private double fitness;
     /** Numero de nodos en el individuo*/
-    private int Nnodos=-1;
-    /**HashMap con los etiquetados*/
+    private int nNodos=-1;
+
     private HashMap<Integer,INodo>ids= new HashMap<>();
 
     /**
@@ -72,10 +73,10 @@ public class Individuo implements IIndividuo{
      * @return entero, numero de nodos
      */
     public int getNumeroNodos() {
-        if(Nnodos==-1){
+        if(nNodos==-1){
             setNnodos();
         }
-        return this.Nnodos;
+        return this.nNodos;
     }
 
     /**
@@ -85,9 +86,9 @@ public class Individuo implements IIndividuo{
         int x=1;
 
         for(INodo nodos: getExpresion().getDescendientes()){
-            x+=nodos.getNnodos();
+            x+=nodos.getNNodos();
         }
-        this.Nnodos=x;
+        this.nNodos=x;
     }
 
     /**

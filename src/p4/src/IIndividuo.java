@@ -1,6 +1,7 @@
 package p4.src;
 
 import java.util.List;
+
 /**
  * Esta clase contiene la informacion de la interfaz IIndividuo
  *

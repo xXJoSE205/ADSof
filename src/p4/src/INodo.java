@@ -1,8 +1,8 @@
-
 package p4.src;
 
 import java.util.HashMap;
 import java.util.List;
+
 /**
  * Esta clase contiene la informacion de la interfaz INodo
  *
@@ -19,7 +19,7 @@ public interface INodo {
     void setDescendientes(List<INodo> descendientes);
     void setId(int id);
     int etiquetar(int x, HashMap<Integer,INodo> etiqueta);
-    int getNnodos();
+    int getNNodos();
     void borrarDescendiente(int x);
     void anadirDescendiente(INodo nodo, int x);
 }

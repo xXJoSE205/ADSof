@@ -2,12 +2,12 @@ package p4.src;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * Esta clase contiene la informacion de una Funcion
  *
  * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
  */
-
 public abstract class Funcion extends Nodo{
     /** Numero de operandos*/
     private int numOperandos;
@@ -46,14 +46,14 @@ public abstract class Funcion extends Nodo{
      */
     @Override
     public String toString() {
-        String cadena = "( " + super.getRaiz()+" ";
+        StringBuilder cadena = new StringBuilder("( " + super.getRaiz() + " ");
 
         for(INodo n : descendientes){
-            cadena += n.toString();
+            cadena.append(n.toString());
         }
-        cadena += ") ";
+        cadena.append(") ");
 
-        return cadena;
+        return cadena.toString();
     }
 
     /**
@@ -110,11 +110,11 @@ public abstract class Funcion extends Nodo{
      * @return int, numero de descendientes
      */
     @Override
-    public int getNnodos() {
+    public int getNNodos() {
         int x=1;
         List<INodo> aux=getDescendientes();
         for (INodo anAux : aux) {
-            x += anAux.getNnodos();
+            x += anAux.getNNodos();
         }
         return x;
     }

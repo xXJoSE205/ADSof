@@ -1,8 +1,8 @@
-
 package p4.src;
 
 import java.util.HashMap;
 import java.util.List;
+
 /**
  * Esta clase contiene la informacion de un Nodo
  *
@@ -10,7 +10,7 @@ import java.util.List;
  */
 public abstract class Nodo implements INodo{
     /** Raiz, simbolo caracteristico*/
-    private String simbolo;
+    private final String simbolo;
     /** ID del nodo*/
     private int id;
 
@@ -19,7 +19,7 @@ public abstract class Nodo implements INodo{
      *
      * @param simbolo Simbolo caracteristico del nodo
      */
-    public Nodo(String simbolo){
+    Nodo(String simbolo){
         this.simbolo = simbolo;
     }
 
@@ -72,7 +72,6 @@ public abstract class Nodo implements INodo{
         return id;
     }
 
-
     /**
      * Si encuentra el nodo, cambia sus descendientes por el nodo dado
      * @param nodo nodo para cambiar
@@ -94,7 +93,7 @@ public abstract class Nodo implements INodo{
                     anadirDescendiente(nodo,i);
                     return;
                 } else {
-                    for(int j=0; j< getDescendientes().size();j++){
+                    for(int j=0; j<getDescendientes().size();j++){
                         getDescendientes().get(i).cruzar(nodo, id);
                     }
                 }
@@ -126,11 +125,7 @@ public abstract class Nodo implements INodo{
         return n2.etiquetar(n1.etiquetar(x+1,etiqueta),etiqueta);
     }
 
-    /**
-     * Obtiene el numero total de descendientes
-     * @return int, numero de nodos del descendiente
-     */
-    public int getNnodos(){
+    public int getNNodos(){
         int x=0;
         if(getRaiz().equals("x")){
             return 1;
@@ -138,9 +133,18 @@ public abstract class Nodo implements INodo{
         x++;
         List<INodo> aux=getDescendientes();
         for (INodo anAux : aux) {
-            x += anAux.getNnodos();
+            x += anAux.getNNodos();
         }
         return x;
     }
 
+    @Override
+    public INodo buscar(int id) {
+        for(INodo n: getDescendientes()){
+            if(n.getId()==id){
+                return n;
+            }
+        }
+        return null;
+    }
 }

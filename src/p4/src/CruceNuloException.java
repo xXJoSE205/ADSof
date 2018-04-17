@@ -1,4 +1,5 @@
 package p4.src;
+
 /**
  * Esta clase contiene la excepcion CruceNuloException
  *

@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Esta clase contiene la informacion de un terminal
+ * Esta clase contiene la informacio  de un Terminal
  *
- * @author Jorge Mateo Segura y José Antonio Muñoz Ortega
+ * @author Jorge Mateo Segura y Jose Antonio Muñoz Ortega
  */
 public abstract class Terminal extends Nodo{
-
     /** Valor numerico de la expresion*/
     private static double valor;
 
