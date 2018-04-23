@@ -15,7 +15,7 @@ public class Individuo implements IIndividuo{
     private double fitness;
     /** Numero de nodos en el individuo*/
     private int nNodos=-1;
-
+    /** Mapa con los nodos y su correspondiente id*/
     private HashMap<Integer,INodo>ids= new HashMap<>();
 
     /**
