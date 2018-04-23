@@ -7,7 +7,7 @@ import java.util.Map;
 
 public abstract class Grafo<T> {
     protected Map<Integer, Vertice<T>> vertices = new HashMap<>();
-    protected Map<Double, Map<Vertice<T>, Vertice<T>>> aristas = new HashMap<>();
+    protected Map<Integer , Map<Integer, Double>> aristas = new HashMap<>();
 
     public Vertice<T> addVertice(T datos){
         Vertice<T> v = new Vertice<>(datos);
@@ -33,13 +33,10 @@ public abstract class Grafo<T> {
 
     public abstract void addArco(Vertice<T> v1, Vertice<T> v2, double peso);
     public boolean existeArco(Vertice<T> v1, Vertice<T> v2){
-        /*aristas.forEach((k, v)->{
-            for(v.forEach((m, n)->{
-                if(m.equals(v1) && n.equals(v2)){
-                    return true;
-                }
-            });
-        });*/
+        aristas.forEach((k, v)-> v.forEach((m, n) -> {
+            if (m.equals(v1) && n.equals(v2)) {
+            }
+        }));
         return false;
     }
 

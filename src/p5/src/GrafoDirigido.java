@@ -1,6 +1,6 @@
 package p5.src;
 
-public class GrafoDirigido extends Grafo {
+public class GrafoDirigido<T> extends Grafo {
 
     public GrafoDirigido() {
 
