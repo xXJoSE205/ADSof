@@ -33,11 +33,13 @@ public abstract class Grafo<T> {
 
     public abstract void addArco(Vertice<T> v1, Vertice<T> v2, double peso);
     public boolean existeArco(Vertice<T> v1, Vertice<T> v2){
+        final Boolean[] b = {false};
         aristas.forEach((k, v)-> v.forEach((m, n) -> {
-            if (m.equals(v1) && n.equals(v2)) {
+            if (k == v1.getId() && m == v2.getId()) {
+                b[0] = true;
             }
         }));
-        return false;
+        return b[0];
     }
 
     public int getNumArcos(){
