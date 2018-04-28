@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Vertice<T> {
-    private final int id;
+    private int id;
     private T datos;
     private static int contador=1;
     private static List<Integer> lista=new ArrayList<>();
@@ -24,7 +24,7 @@ public class Vertice<T> {
     }
 
     public Vertice(int id, T datos){
-        if (id<this.contador){
+        if (id<contador){
             return;
         }
         for(Integer i: lista){
@@ -32,7 +32,7 @@ public class Vertice<T> {
                 return;
             }
         }
-        this.id=id;
+        this.id = id;
         lista.add(id);
         Collections.sort(lista);
     }
@@ -43,5 +43,10 @@ public class Vertice<T> {
 
     public T getDatos() {
         return datos;
+    }
+
+    @Override
+    public String toString() {
+        return (String) datos;
     }
 }

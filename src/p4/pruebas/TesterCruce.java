@@ -1,7 +1,6 @@
 package p4.pruebas;
 
 import p4.src.*;
-
 import java.util.List;
 
 public class TesterCruce {
