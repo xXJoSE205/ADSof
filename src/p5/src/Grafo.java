@@ -16,7 +16,7 @@ public abstract class Grafo<T> {
         return v;
     }
 
-    protected Vertice<T> addVertice(int id, T datos){
+    public Vertice<T> addVertice(int id, T datos){
         Vertice<T> v = new Vertice<>(id, datos);
         vertices.put(id, v);
         return v;

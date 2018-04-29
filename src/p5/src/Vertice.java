@@ -10,7 +10,7 @@ public class Vertice<T> {
     private static int contador=1;
     private static List<Integer> lista=new ArrayList<>();
 
-    public Vertice( T datos) {
+    public Vertice(T datos) {
         for(Integer i: lista){
             if(i==contador){
                 contador++;
@@ -33,6 +33,7 @@ public class Vertice<T> {
             }
         }
         this.id = id;
+        this.datos = datos;
         lista.add(id);
         Collections.sort(lista);
     }

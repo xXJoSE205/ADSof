@@ -31,5 +31,4 @@ public class TestGrafos {
         double peso2 = g.getPesoDe(v1, v3);
         System.out.println("Peso entre " + v1 + " y " + v3 + ": " + peso2);
     }
-
 }
