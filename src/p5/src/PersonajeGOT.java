@@ -16,4 +16,9 @@ public class PersonajeGOT {
     public String getCasa() {
         return casa;
     }
+
+    @Override
+    public String toString() {
+        return "\tNombre: "+nombre+", Casa: "+casa;
+    }
 }

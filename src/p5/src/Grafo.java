@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 public abstract class Grafo<T> {
     Map<Integer, Vertice<T>> vertices = new HashMap<>();
@@ -35,7 +36,8 @@ public abstract class Grafo<T> {
     public abstract void addArco(Vertice<T> v1, Vertice<T> v2, double peso);
 
     public boolean existeArco(Vertice<T> v1, Vertice<T> v2){
-        final Boolean[] b = {false};
+        final Boolean b[] = {false};
+
         aristas.forEach((k, v)-> v.forEach((m, n) -> {
             if (k == v1.getId() && m == v2.getId()) {
                 b[0] = true;
@@ -52,6 +54,7 @@ public abstract class Grafo<T> {
 
     public abstract List<Vertice<T>> getVecinosDe(Vertice<T> v); // devuelve los vértices que tienen un arco con v
     // (en grafo dirigido, v ha de ser origen de los arcos)
+
     public String toString(){
         AtomicReference<String> cadena = new AtomicReference<>("");
         vertices.forEach((k, v)-> cadena.updateAndGet(v1 -> v1 + v + "  "));
