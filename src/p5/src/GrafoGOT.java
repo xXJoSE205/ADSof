@@ -47,7 +47,8 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
         Vertice<PersonajeGOT> pers;
 
         pers = (Vertice<PersonajeGOT>) vertices.entrySet().stream()
-                .filter(map -> ((p5.src.PersonajeGOT) map.getValue().getDatos()).getNombre().equals(nombre));
+                .filter(map -> ((p5.src.PersonajeGOT) map.getValue().getDatos()).getNombre().equals(nombre))
+                .map(Map.Entry::getValue);
 
         return pers;
     }
@@ -69,7 +70,7 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
 
         lista.add(vertices.entrySet().stream()
                 .filter(map -> ((p5.src.PersonajeGOT) map.getValue().getDatos()).getCasa().equals(casa))
-                .map(map-> ((p5.src.PersonajeGOT)map.getValue().getDatos()).getCasa())
+                .map(map-> ((p5.src.PersonajeGOT)map.getValue().getDatos()).getNombre())
                 .collect(Collectors.joining()));
 
         return lista;
