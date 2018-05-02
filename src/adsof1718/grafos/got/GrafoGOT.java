@@ -124,16 +124,12 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT> {
         Map<String, Integer> gradosPon = new HashMap<>();
 
         vertices.forEach((k1, v1)->{
-            if(aristas.get(k1)==null){
-                gradosPon.put(((adsof1718.grafos.got.PersonajeGOT)v1.getDatos()).getNombre(), 0);
-            }else {
-                Map<Integer, Double> map = aristas.get(k1);
-                final int[] grados = {0};
+            Map<Integer, Double> map = aristas.get(k1);
+            final int[] grados = {0};
 
-                map.forEach((k2, v2)-> grados[0] += v2);
+            map.forEach((k2, v2)-> grados[0] += v2);
 
-                gradosPon.put(((adsof1718.grafos.got.PersonajeGOT)v1.getDatos()).getNombre(), grados[0]);
-            }
+            gradosPon.put(((adsof1718.grafos.got.PersonajeGOT)v1.getDatos()).getNombre(), grados[0]);
         });
 
         return gradosPon;

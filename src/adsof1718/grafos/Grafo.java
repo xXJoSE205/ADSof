@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 public abstract class Grafo<T> {
     protected Map<Integer, Vertice<T>> vertices = new HashMap<>();
@@ -23,8 +24,12 @@ public abstract class Grafo<T> {
     }
 
     public List<Vertice<T>> getVertices(){
-        List<Vertice<T>> l = new ArrayList<>();
-        vertices.forEach((k, v)->l.add(v));
+        List<Vertice<T>> l;
+
+        l = vertices.entrySet().stream()
+                .map(Map.Entry::getValue)
+                .collect(Collectors.toList());
+
         return l;
     }
 
