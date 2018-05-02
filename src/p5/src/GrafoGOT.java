@@ -9,12 +9,43 @@ import java.util.stream.Collectors;
 public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
 
     public static void main(String[] args){
+        List<String>  listas;
+        Map<String, Integer> mapas;
+        Vertice<p5.src.PersonajeGOT> personaje;
+
         try {
             GrafoGOT<p5.src.PersonajeGOT> g = new GrafoGOT<>("got-s01-vertices.csv", "got-s01-arcos.csv");
             System.out.println(g);
 
-            List<String>  listas;
 
+            System.out.println("\nPersonaje buscado:");
+            personaje = g.getVertice("Tyrion Lannister");
+            System.out.println(personaje);
+
+            listas = g.casas();
+            System.out.println("\nDistintas casas:");
+            System.out.println(listas);
+
+            listas = g.miembrosCasa("Stark");
+            System.out.println("\nMiembros de la casa Stark:");
+            System.out.println(listas.toString());
+            listas = g.miembrosCasa("Lannister");
+            System.out.println("\nMiembros de la casa Lannister:");
+            System.out.println(listas.toString());
+
+            mapas = g.gradoPersonajes();
+            System.out.println("\nVecinos de cada personaje:");
+            System.out.println(mapas);
+
+            System.out.println("");
+            mapas = g.gradoPonderadoPersonajes();
+            System.out.println("Peso Ponderado:");
+            System.out.println(mapas);
+
+            System.out.println("");
+            mapas = g.personajesRelevantes();
+            System.out.println("Personajes relevantes:");
+            System.out.println(mapas);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -44,21 +75,24 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
     }
 
     public Vertice<PersonajeGOT> getVertice(String nombre){
-        Vertice<PersonajeGOT> pers;
+        List<Vertice<PersonajeGOT>> pers;
+        Vertice<PersonajeGOT> personaje;
 
-        pers = (Vertice<PersonajeGOT>) vertices.entrySet().stream()
+        pers = vertices.entrySet().stream()
                 .filter(map -> ((p5.src.PersonajeGOT) map.getValue().getDatos()).getNombre().equals(nombre))
-                .map(Map.Entry::getValue);
+                .map(Map.Entry::getValue).collect(Collectors.toList());
 
-        return pers;
+        personaje = pers.get(0);
+
+        return personaje;
     }
 
     public List<String> casas(){
-        Set<String> setLista = new TreeSet<>();
+        Set<String> setLista;
 
-        setLista.add(vertices.entrySet().stream()
+        setLista = vertices.entrySet().stream()
                 .map(map-> ((p5.src.PersonajeGOT)map.getValue().getDatos()).getCasa())
-                .collect(Collectors.joining()));
+                .collect(Collectors.toSet());
 
         setLista.remove("null");
 
@@ -66,12 +100,12 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
     }
 
     public List<String> miembrosCasa(String casa){
-        List<String> lista = new ArrayList<>();
+        List<String> lista;
 
-        lista.add(vertices.entrySet().stream()
+        lista = vertices.entrySet().stream()
                 .filter(map -> ((p5.src.PersonajeGOT) map.getValue().getDatos()).getCasa().equals(casa))
                 .map(map-> ((p5.src.PersonajeGOT)map.getValue().getDatos()).getNombre())
-                .collect(Collectors.joining()));
+                .collect(Collectors.toList());
 
         return lista;
     }

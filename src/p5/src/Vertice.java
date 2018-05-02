@@ -48,6 +48,6 @@ public class Vertice<T> {
 
     @Override
     public String toString() {
-        return (String) datos;
+        return datos.toString();
     }
 }

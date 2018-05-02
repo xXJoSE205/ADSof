@@ -19,6 +19,6 @@ public class PersonajeGOT {
 
     @Override
     public String toString() {
-        return "\tNombre: "+nombre+", Casa: "+casa;
+        return "Nombre: "+nombre+", Casa: "+casa+"\t";
     }
 }
