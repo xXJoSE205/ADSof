@@ -6,7 +6,6 @@ public class GrafoNoDirigido<T> extends Grafo<T> {
 
     @Override
     public void addArco(Vertice<T> v1, Vertice<T> v2, double peso) {
-        //Esta mierda no va
         if(existeArco(v1, v2) && existeArco(v2, v1)) {
             return;
         }
