@@ -1,4 +1,4 @@
-package p5.src;
+package adsof1718.grafos;
 
 import java.util.ArrayList;
 import java.util.Collections;

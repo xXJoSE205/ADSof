@@ -1,15 +1,14 @@
-package p5.src;
+package adsof1718.grafos;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
 
 public abstract class Grafo<T> {
-    Map<Integer, Vertice<T>> vertices = new HashMap<>();
-    Map<Integer , Map<Integer, Double>> aristas = new HashMap<>();
+    protected Map<Integer, Vertice<T>> vertices = new HashMap<>();
+    protected Map<Integer , Map<Integer, Double>> aristas = new HashMap<>();
 
     public Vertice<T> addVertice(T datos){
         Vertice<T> v = new Vertice<>(datos);

@@ -1,20 +1,22 @@
-package p5.src;
+package adsof1718.grafos.got;
 
+import adsof1718.grafos.GrafoNoDirigido;
+import adsof1718.grafos.Vertice;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
+public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT> {
 
     public static void main(String[] args){
         List<String>  listas;
         Map<String, Integer> mapas;
-        Vertice<p5.src.PersonajeGOT> personaje;
+        Vertice<adsof1718.grafos.got.PersonajeGOT> personaje;
 
         try {
-            GrafoGOT<p5.src.PersonajeGOT> g = new GrafoGOT<>("got-s01-vertices.csv", "got-s01-arcos.csv");
+            GrafoGOT<adsof1718.grafos.got.PersonajeGOT> g = new GrafoGOT<>("got-s01-vertices.csv", "got-s01-arcos.csv");
             System.out.println(g);
 
 
@@ -57,7 +59,7 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
 
         while((line = bufferVertices.readLine()) != null){
             String split1[] = line.split(",");
-            p5.src.PersonajeGOT pers = new p5.src.PersonajeGOT(split1[1], split1[2]);
+            adsof1718.grafos.got.PersonajeGOT pers = new adsof1718.grafos.got.PersonajeGOT(split1[1], split1[2]);
             if(this.addVertice(Integer.parseInt(split1[0]), (PersonajeGOT)pers)==null){
                 throw new NullPointerException("Error al crear el personaje");
             }
@@ -79,7 +81,7 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
         Vertice<PersonajeGOT> personaje;
 
         pers = vertices.entrySet().stream()
-                .filter(map -> ((p5.src.PersonajeGOT) map.getValue().getDatos()).getNombre().equals(nombre))
+                .filter(map -> ((adsof1718.grafos.got.PersonajeGOT) map.getValue().getDatos()).getNombre().equals(nombre))
                 .map(Map.Entry::getValue).collect(Collectors.toList());
 
         personaje = pers.get(0);
@@ -91,7 +93,7 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
         Set<String> setLista;
 
         setLista = vertices.entrySet().stream()
-                .map(map-> ((p5.src.PersonajeGOT)map.getValue().getDatos()).getCasa())
+                .map(map-> ((adsof1718.grafos.got.PersonajeGOT)map.getValue().getDatos()).getCasa())
                 .collect(Collectors.toSet());
 
         setLista.remove("null");
@@ -103,8 +105,8 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
         List<String> lista;
 
         lista = vertices.entrySet().stream()
-                .filter(map -> ((p5.src.PersonajeGOT) map.getValue().getDatos()).getCasa().equals(casa))
-                .map(map-> ((p5.src.PersonajeGOT)map.getValue().getDatos()).getNombre())
+                .filter(map -> ((adsof1718.grafos.got.PersonajeGOT) map.getValue().getDatos()).getCasa().equals(casa))
+                .map(map-> ((adsof1718.grafos.got.PersonajeGOT)map.getValue().getDatos()).getNombre())
                 .collect(Collectors.toList());
 
         return lista;
@@ -113,7 +115,7 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
     public Map<String, Integer> gradoPersonajes(){
         Map<String, Integer> grados = new HashMap<>();
 
-        aristas.forEach((k1, v1)-> grados.put(((p5.src.PersonajeGOT)vertices.get(k1).getDatos()).getNombre(), v1.size()));
+        aristas.forEach((k1, v1)-> grados.put(((adsof1718.grafos.got.PersonajeGOT)vertices.get(k1).getDatos()).getNombre(), v1.size()));
 
         return grados;
     }
@@ -123,14 +125,14 @@ public class GrafoGOT<PersonajeGOT> extends GrafoNoDirigido<PersonajeGOT>{
 
         vertices.forEach((k1, v1)->{
             if(aristas.get(k1)==null){
-                gradosPon.put(((p5.src.PersonajeGOT)v1.getDatos()).getNombre(), 0);
+                gradosPon.put(((adsof1718.grafos.got.PersonajeGOT)v1.getDatos()).getNombre(), 0);
             }else {
                 Map<Integer, Double> map = aristas.get(k1);
                 final int[] grados = {0};
 
                 map.forEach((k2, v2)-> grados[0] += v2);
 
-                gradosPon.put(((p5.src.PersonajeGOT)v1.getDatos()).getNombre(), grados[0]);
+                gradosPon.put(((adsof1718.grafos.got.PersonajeGOT)v1.getDatos()).getNombre(), grados[0]);
             }
         });
 
